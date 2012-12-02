@@ -618,6 +618,7 @@ class CodePeopleMediaPlayer {
 					foreach( $item->subtitles as $subtitle){
 						$location = htmlspecialchars($subtitle->link);
 						$language = $subtitle->language;
+						$mp_subtitles[] = '<track src="'.$location.'" kind="subtitles" srclang="'.$language.'"></track>';
 						$item_subtitles[] = '{"kind" : "subtitles", "src" : "'.$location.'", "srclang" : "'.$language.'"}';
 					}
 					
@@ -661,7 +662,7 @@ class CodePeopleMediaPlayer {
 				true
 				);
 				
-				return '<'.$config_obj->type.' id="'.$id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.'-list">'.implode(' ', $pl_items).'</ul>' : '');
+				return '<'.$config_obj->type.' id="'.$id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.'-list">'.implode(' ', $pl_items).'</ul>' : '');
 				
 			}else{
 				return '';
