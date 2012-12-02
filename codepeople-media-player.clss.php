@@ -582,6 +582,23 @@ class CodePeopleMediaPlayer {
 						$file = htmlspecialchars($file);
 						$ext = strtolower(substr($file, strlen($file)-4));
 						if($ext[0] == '.') $ext = substr($ext, 1);
+						
+						switch ($ext){
+							case 'mp4':
+							case 'm4v':
+								return 'mp4';
+							case 'webm':
+							case 'webma':
+							case 'webmv':	
+								return 'webm';
+							case 'ogg':
+							case 'oga':
+							case 'ogv':	
+								return 'ogg';
+							default:
+								return ext;
+						}
+						
 						if($first_file){
 							$mp_atts[] = 'src="'.$file.'"';
 							$mp_atts[] = 'type="'.$config_obj->type.'/'.$ext.'"';
