@@ -587,14 +587,17 @@ class CodePeopleMediaPlayer {
 							case 'mp4':
 							case 'm4v':
 								$ext = 'mp4';
+							break;	
 							case 'webm':
 							case 'webma':
 							case 'webmv':	
 								$ext = 'webm';
+							break;	
 							case 'ogg':
 							case 'oga':
 							case 'ogv':	
 								$ext = 'ogg';
+							break;	
 							default:
 								$ext = $ext;
 						}
