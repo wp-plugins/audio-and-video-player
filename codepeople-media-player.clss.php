@@ -145,6 +145,7 @@ class CodePeopleMediaPlayer {
 		global $wpdb;
 ?>
 		<h2><?php _e('Audio And Video Player'); ?></h2>
+		<p  style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;"><?php _e('For any issues with the media player, go to our <a href="http://www.tsplayer.com/contact-us" target="_blank">contact page</a> and leave us a message.'); ?></p>
 <?php	
 		if(wp_verify_nonce($_POST['cpmp_player_create_update_nonce'], __FILE__)){
 			// Save player's data
@@ -662,7 +663,9 @@ class CodePeopleMediaPlayer {
 				true
 				);
 				
-				return '<'.$config_obj->type.' id="'.$id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.'-list">'.implode(' ', $pl_items).'</ul>' : '');
+				return '<'.$config_obj->type.' id="'.$id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.'-list">'.implode(' ', $pl_items).'</ul>' : '').'<noscript>
+				audio-and-video-player require JavaScript
+			</noscript>';
 				
 			}else{
 				return '';
