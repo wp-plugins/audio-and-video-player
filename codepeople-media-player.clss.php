@@ -146,6 +146,7 @@ class CodePeopleMediaPlayer {
 ?>
 		<h2><?php _e('Audio And Video Player'); ?></h2>
 		<p  style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;"><?php _e('For any issues with the media player, go to our <a href="http://www.tsplayer.com/contact-us" target="_blank">contact page</a> and leave us a message.'); ?></p>
+		
 <?php	
 		if(wp_verify_nonce($_POST['cpmp_player_create_update_nonce'], __FILE__)){
 			// Save player's data
@@ -162,11 +163,6 @@ class CodePeopleMediaPlayer {
 			$conf->preload = (isset($_POST['cpmp_preload'])) ? 'auto' : 'none';
 			$playlist = json_decode(stripslashes($_POST['cpmp_media_player_playlist']));
 			
-			if(count($playlist) > 1){
-				$n = array(1 => $playlist[1]);
-				$playlist = $n;
-			}
-
 			$data = array(
 							'player_name' => $_POST['cpmp_player_name'],
 							'config' => serialize($conf),
@@ -189,6 +185,7 @@ class CodePeopleMediaPlayer {
 		}
 		
 		if ((!wp_verify_nonce($_POST['cpmp_player_edition_nonce'],__FILE__) && !wp_verify_nonce($_POST['cpmp_player_creation_nonce'],__FILE__)) || (wp_verify_nonce($_POST['cpmp_player_edition_nonce'],__FILE__) && isset($_POST['cpmp_action']) && $_POST['cpmp_action'] == 'remove')){
+		
 			$wpdb->query( 
 				$wpdb->prepare( 
 					"
@@ -225,10 +222,14 @@ class CodePeopleMediaPlayer {
 							<input type="submit" value="Edit media player" class="button-primary">
 							<input type="button" value="Remove media player" class="button-primary" onclick="cpmp.remove_player();">
 						</div>
+						<div>
+							<?php _e('Only one media player can be inserted in the free version of Audio and Video Player. To increase the media player features, get the professional version on <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio and Video Player</a>.'); ?>
+						</div>
 					</form>	
-						<div style="padding:10px;"> - or -</div>
+			
 <?php
-			} // End player edition			
+			} // End player edition	
+			else{	
 ?>						
 					<form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">	
 						<?php
@@ -239,10 +240,20 @@ class CodePeopleMediaPlayer {
 							<h3>Create new one</h3>
 							<input type="radio" name="player_type" value="audio" checked> Audio <input type="radio" name="player_type" value="video"> Video <input type="submit" value="Create new media player" class="button-primary" />
 						</div>
+						<div>
+							<?php _e('Only one media player can be inserted in the free version of Audio and Video Player. To increase the media player features, get the professional version on <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio and Video Player</a>.'); ?>
+						</div>
 					</form>
 			</div>
 <?php		
+			} // End create new player
 		}else{
+			if(!isset($_POST['player_id'])){
+						$sql = "SELECT count(*) FROM ".$wpdb->prefix.CPMP_PLAYER.";";
+						$c = $wpdb->get_var($sql);
+						if($c > 0)
+							header('location:options-general.php?page=codepeople-media-player.php');
+					}
 			wp_enqueue_style('thickbox');
 			wp_enqueue_script('cpmp-admin', plugin_dir_url(__FILE__).'js/cpmp_admin.js', array('jquery', 'thickbox'));
 			
@@ -262,11 +273,6 @@ class CodePeopleMediaPlayer {
 				$config 	= unserialize($player->config);
 				$playlist 	= unserialize($player->playlist);
 				
-				if(count($playlist) > 1){
-					$n = array(1 => $playlist[1]);
-					$playlist = $n;
-				}
-
 				// Create the playlist data
 				$playlist_json = json_encode($playlist);
 				echo "<script>
@@ -383,7 +389,6 @@ class CodePeopleMediaPlayer {
 							<tr valign="top">
 								<td>
 									<input type="button" id="insert" name="insert" value="Create New Item" class="button-primary" onclick="cpmp.display_item_form();" />
-									<div><?php _e('Only one item can be inserted in the free version of Audio and Video Player. To increase the media player features, get the professional version on <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio and Video Player</a>.'); ?></div>
 								</td>
 							</tr>
 							<tr>
@@ -519,15 +524,12 @@ class CodePeopleMediaPlayer {
 		
 		// Load players
 		$sql = "SELECT id, player_name FROM ".$wpdb->prefix.CPMP_PLAYER.";";
-		$players = $wpdb->get_results($sql);
+		$player = $wpdb->get_row($sql);
 		
 		$options = '';
 		$label   = '';	
-		if(count($players)){
-			foreach ($players as $player){
-				$options .= '<option value="'.$player->id.'">'.$player->player_name.'</option>';
-			}	
-			$tag = '<select id="cpmp_media_player">'.$options.'</select>';
+		if(count($player)){
+			$tag = '<input id="cpmp_media_player" type="radio" value="'.$player->id.'" checked />'.$player->player_name;
 			$label = __('Select the player to insert:');
 		}else{
 			$tag = 'You must to define a media player before use it on page/post. <a href="options-general.php?page=codepeople-media-player.php">Create a media player here</a>';
@@ -631,7 +633,6 @@ class CodePeopleMediaPlayer {
 					
 					
 					$first_item = false;
-					break;
 				}	
 				$id = 'codepeople_media_player'.time();
 

@@ -49,12 +49,8 @@ var cpmp = function($){
 	}
 	
 	function display_item_form(){
-		if(obj.items.length == 0){
-			obj.clear_item_form();
-			$('#item_form').show();
-		}else{
-			alert('Only one item can be inserted in the free version of Audio and Video Player.');
-		}
+		obj.clear_item_form();
+		$('#item_form').show();
 	}
 	
 	function set_skin(e, skin, width, height){
@@ -168,12 +164,8 @@ var cpmp = function($){
 		});
 		
 		if(item_id == ''){ // Insert a new item
-			if(obj.items.length == 0){
-				obj.items.push(item);
-				$('#items_container').append('<div id="'+item.id+'" class="playlist_item" style="cursor:pointer;"><input type="button" value="Delete item" onclick="cpmp.delete_item(\''+item.id+'\');"><span>'+item.annotation+'</span></div>');
-			}else{
-				alert('Only one item can be inserted in the free version of Audio and Video Player.');
-			}	
+			obj.items.push(item);
+			$('#items_container').append('<div id="'+item.id+'" class="playlist_item" style="cursor:pointer;"><input type="button" value="Delete item" onclick="cpmp.delete_item(\''+item.id+'\');"><span>'+item.annotation+'</span></div>');
 		}else{ // Edit an existent item
 			for(var i = 0, h = obj.items.length; i < h; i++){
 			  if(obj.items[i].id == item_id){
@@ -292,7 +284,7 @@ var cpmp = function($){
                 {text: 'OK', click: function() {
 					var p = $('#cpmp_media_player');
 					if(p.length){
-						var v = p[0].options[p[0].selectedIndex].value;
+						var v = p.val();
 						if(send_to_editor){
 							send_to_editor('[codepeople-html5-media-player id='+v+']');
 						}
@@ -337,8 +329,9 @@ var cpmp = function($){
 
 jQuery(
 	function($){
+		
 		if(typeof cpmp_playlist_items != 'undefined' && cpmp_playlist_items){
-			cpmp.items.push(cpmp_playlist_items[0]);
+			cpmp.items = cpmp_playlist_items;
 		}
 		
 		cpmp.load_additional_skins();
