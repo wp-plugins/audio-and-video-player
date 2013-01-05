@@ -35,10 +35,7 @@ class CodePeopleMediaPlayer {
 	function _create_db_structure(){
 		global $wpdb;
 
-		$sql = "DROP TABLE IF EXISTS ".$wpdb->prefix.CPMP_PLAYER.";";
-		$wpdb->query($sql);
-		
-		$sql = "CREATE TABLE ".$wpdb->prefix.CPMP_PLAYER." (
+		$sql = "CREATE TABLE IF NOT EXISTS ".$wpdb->prefix.CPMP_PLAYER." (
 			id mediumint(9) NOT NULL AUTO_INCREMENT,
 			player_name VARCHAR(250) NOT NULL DEFAULT '',
 			config TEXT NULL,
