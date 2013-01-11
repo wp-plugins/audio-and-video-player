@@ -38,8 +38,8 @@ class CodePeopleMediaPlayer {
 		$sql = "CREATE TABLE IF NOT EXISTS ".$wpdb->prefix.CPMP_PLAYER." (
 			id mediumint(9) NOT NULL AUTO_INCREMENT,
 			player_name VARCHAR(250) NOT NULL DEFAULT '',
-			config TEXT NULL,
-			playlist TEXT NULL,
+			config LONGTEXT NULL,
+			playlist LONGTEXT NULL,
 			UNIQUE KEY id (id)
          );";             
 		$wpdb->query($sql); 
