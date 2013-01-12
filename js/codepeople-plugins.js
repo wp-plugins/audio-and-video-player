@@ -130,6 +130,15 @@ var mejs = mejs || {};
 		},
 		
 		playItem : function(item){
+			
+			function useSilverlight(src){
+				return /wmv$/i.test(src.src) || /wmv$/i.test(src.type);
+			};
+			
+			function setClass(t, c){
+				return (t.indexOf(c) == -1) ? t.replace('class="', 'class="'+c+' ') : t;
+			};
+			
 			var me       = this,
 				dim 	 = '',
 				options  = me.player.options,
@@ -149,9 +158,7 @@ var mejs = mejs || {};
 			}	
 			
 			// Set the music player skin
-			if(me.skin){
-				tag += ' class="' + me.skin + '"';
-			}
+			tag += ' class="' + ((me.skin) ? me.skin : '') + '"';
 			
 			if($.isPlainObject(item)){
 				// Assign the poster
@@ -165,9 +172,11 @@ var mejs = mejs || {};
 				if(item.source){
 					if($.isArray(item.source)){ // many source formats
 						$.each(item.source, function(i, src){
+							if(useSilverlight(src)) tag = setClass(tag, 'silverlight');
 							tag += me.parseSrc(src);
 						});
 					}else{ // only one source
+						if(useSilverlight(item.source)) tag = setClass(tag, 'silverlight');
 						tag += me.parseSrc(item.source);
 					}
 				}
@@ -347,6 +356,10 @@ var mejs = mejs || {};
 		iPadUseNativeControls: false,
 		iPhoneUseNativeControls: false, 
 		success: function(media, node,  player) {
+			if(media.pluginType && media.pluginType == 'silverlight'){
+				$(node).parents('.codepeople-media').addClass('silverlight');
+			}	
+			
 			new mejs.Playlist(player);
 		}
 	});
