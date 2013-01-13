@@ -244,7 +244,7 @@ var cpmp = function($){
 				var item = obj.items[i];
 				
 				set_value('item_id', item_id);
-				set_value('item_annotation', item.annotation);
+				set_value('item_annotation', item.annotation.replace(/&quot;/g, '"'));
 				set_value('item_link', item.link);
 				set_value('item_poster', item.poster);
 				
