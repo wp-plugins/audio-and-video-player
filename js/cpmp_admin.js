@@ -118,11 +118,12 @@ var cpmp = function($){
 	function add_item(){
 
 		var item_id = $('#item_id').val();
-		var item = {
+		var annotation = $('#item_annotation').val(),
+		item = {
 			id 			: (item_id == "") ? new Date().getTime() : item_id,
-			annotation 	: $('#item_annotation').val(),
-			link	   	: $('#item_link').val(),
-			poster	   	: $('#item_poster').val() || "",
+			annotation 	: annotation.replace(/\"/g,"&quot;"),
+			link	   	: $('#item_link').val().replace(/\"/g,"&quot;"),
+			poster	   	: $('#item_poster').val().replace(/\"/g,"&quot;") || "",
 			files		: [],
 			subtitles	: []
 		};
@@ -130,7 +131,7 @@ var cpmp = function($){
 		$('#item_form').find('.item_file').each(function(i, e){
 			var v = $(this).val();
 			if(!is_empty(v))
-				item.files[i] = v;
+				item.files[i] = v.replace(/\"/g,"&quot;");
 		});
 		
 		// Requirements
@@ -149,30 +150,30 @@ var cpmp = function($){
 			var v = $(this).val();
 			if(!is_empty(v)){
 				item.subtitles[i] = {
-					'link' : v
+					'link' : v.replace(/\"/g,"&quot;")
 				};
 				var l = $(this).next('.item_subtitle_lang').val();
 				if(!is_empty(l)){
-					item.subtitles[i]['language'] = l;
+					item.subtitles[i]['language'] = l.replace(/\"/g,"&quot;");
 				}else{
 					l = v.substr(v.lastIndexOf('/')+1);
 					var p = l.lastIndexOf('.');
 					l = l.substr(0, ((p != -1) ? p: l.length));
-					item.subtitles[i]['language'] = l;
+					item.subtitles[i]['language'] = l.replace(/\"/g,"&quot;");
 				}	
 			}	
 		});
 		
 		if(item_id == ''){ // Insert a new item
 			obj.items.push(item);
-			$('#items_container').append('<div id="'+item.id+'" class="playlist_item" style="cursor:pointer;"><input type="button" value="Delete item" onclick="cpmp.delete_item(\''+item.id+'\');"><span>'+item.annotation+'</span></div>');
+			$('#items_container').append('<div id="'+item.id+'" class="playlist_item" style="cursor:pointer;"><input type="button" value="Delete item" onclick="cpmp.delete_item(\''+item.id+'\');"><span>'+annotation+'</span></div>');
 		}else{ // Edit an existent item
 			for(var i = 0, h = obj.items.length; i < h; i++){
 			  if(obj.items[i].id == item_id){
 				obj.items[i] = item;
 				
 				// Update the item text in playlist
-				$('#'+item_id).find('span').text(item.annotation);
+				$('#'+item_id).find('span').text(annotation);
 				break;
 			  }
 			}
