@@ -159,7 +159,6 @@ class CodePeopleMediaPlayer {
 			if(isset($_POST['cpmp_loop'])) $conf->loop = 'loop';
 			$conf->preload = (isset($_POST['cpmp_preload'])) ? 'auto' : 'none';
 			$playlist = json_decode(stripslashes($_POST['cpmp_media_player_playlist']));
-			
 			$data = array(
 							'player_name' => $_POST['cpmp_player_name'],
 							'config' => serialize($conf),
@@ -169,14 +168,17 @@ class CodePeopleMediaPlayer {
 			if(empty($_POST['cpmp_player_id'])){
 				$wpdb->insert(
 								$wpdb->prefix.CPMP_PLAYER,
-								$data
+								$data,
+								array( '%s', '%s', '%s' )
 							);
 			}	
 			else{
 				$wpdb->update(
 								$wpdb->prefix.CPMP_PLAYER,
 								$data,
-								array('id' => $_POST['cpmp_player_id'])
+								array('id' => $_POST['cpmp_player_id']),
+								array( '%s', '%s', '%s' ),
+								array('%d')
 							);
 			}	
 		}
@@ -212,7 +214,7 @@ class CodePeopleMediaPlayer {
 							<select id="player_id" name="player_id">
 							<?php
 								foreach($players as $player){
-									print '<option value="'.$player->id.'">'.$player->player_name.'</option>';
+									print '<option value="'.$player->id.'">'.stripslashes($player->player_name).'</option>';
 								}
 							?>
 							</select>
@@ -326,7 +328,7 @@ class CodePeopleMediaPlayer {
 									<label for="cpmp_player_name"><?php _e('Player name'); ?> <span style="color:red">*</span> :</label>
 								</th>
 								<td style="width:100%">
-									<input type="text" id="cpmp_player_name" name="cpmp_player_name" value="<?php echo ((isset($player->player_name)) ? $player->player_name : "" ); ?>" />
+									<input type="text" id="cpmp_player_name" name="cpmp_player_name" value="<?php echo esc_attr((isset($player->player_name)) ? stripslashes($player->player_name) : "" ); ?>" />
 								</td>
 							</tr>
 							
@@ -335,7 +337,7 @@ class CodePeopleMediaPlayer {
 									<label for="cpmp_width"><?php _e('Width:'); ?></label>
 								</th>
 								<td style="width:100%">
-									<input type="text" id="cpmp_width" name="cpmp_width" value="<?php echo ((isset($config->width)) ? $config->width : "" ); ?>" /><div id="cpmp_width_info" style="font-style:italic; color:#666;"><?php _e('Value should be greater than or equal to:'.$width_limit); ?></div>
+									<input type="text" id="cpmp_width" name="cpmp_width" value="<?php echo esc_attr((isset($config->width)) ? $config->width : "" ); ?>" /><div id="cpmp_width_info" style="font-style:italic; color:#666;"><?php _e('Value should be greater than or equal to:'.$width_limit); ?></div>
 								</td>
 							</tr>
 							<tr valign="top">
@@ -343,7 +345,7 @@ class CodePeopleMediaPlayer {
 									<label for="cpmp_height"><?php _e('Height:'); ?></label>
 								</th>
 								<td style="width:100%">
-									<input type="text" id="cpmp_height" name="cpmp_height" value="<?php echo ((isset($config->width)) ? $config->height : "" ); ?>" /><div id="cpmp_height_info" style="font-style:italic; color:#666;"><?php _e('Value should be greater than or equal to:'.$height_limit); ?></div>
+									<input type="text" id="cpmp_height" name="cpmp_height" value="<?php echo esc_attr((isset($config->width)) ? $config->height : "" ); ?>" /><div id="cpmp_height_info" style="font-style:italic; color:#666;"><?php _e('Value should be greater than or equal to:'.$height_limit); ?></div>
 								</td>
 							</tr>
 							<tr valign="top">
@@ -526,7 +528,7 @@ class CodePeopleMediaPlayer {
 		$options = '';
 		$label   = '';	
 		if(count($player)){
-			$tag = '<input id="cpmp_media_player" type="radio" value="'.$player->id.'" checked />'.$player->player_name;
+			$tag = '<input id="cpmp_media_player" type="radio" value="'.$player->id.'" checked />'.stripslashes($player->player_name);
 			$label = __('Select the player to insert:');
 		}else{
 			$tag = 'You must to define a media player before use it on page/post. <a href="options-general.php?page=codepeople-media-player.php">Create a media player here</a>';
