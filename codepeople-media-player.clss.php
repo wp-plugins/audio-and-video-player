@@ -345,7 +345,7 @@ class CodePeopleMediaPlayer {
 									<label for="cpmp_height"><?php _e('Height:'); ?></label>
 								</th>
 								<td style="width:100%">
-									<input type="text" id="cpmp_height" name="cpmp_height" value="<?php echo esc_attr((isset($config->width)) ? $config->height : "" ); ?>" /><div id="cpmp_height_info" style="font-style:italic; color:#666;"><?php _e('Value should be greater than or equal to:'.$height_limit); ?></div>
+									<input type="text" id="cpmp_height" name="cpmp_height" value="<?php echo esc_attr((isset($config->height)) ? $config->height : "" ); ?>" /><div id="cpmp_height_info" style="font-style:italic; color:#666;"><?php _e('Value should be greater than or equal to:'.$height_limit); ?></div>
 								</td>
 							</tr>
 							<tr valign="top">
