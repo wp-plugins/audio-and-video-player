@@ -166,7 +166,7 @@ var cpmp = function($){
 		
 		if(item_id == ''){ // Insert a new item
 			obj.items.push(item);
-			$('#items_container').append('<div id="'+item.id+'" class="playlist_item" style="cursor:pointer;"><input type="button" value="Delete item" onclick="cpmp.delete_item(\''+item.id+'\');"><span>'+annotation+'</span></div>');
+			$('#items_container').append('<div id="'+item.id+'" class="playlist_item" style="cursor:pointer;"><input type="button" value="Up" onclick="cpmp.move_item(\''+item.id+'\', -1);" /><input type="button" value="Down" onclick="cpmp.move_item(\''+item.id+'\', 1);" /><input type="button" value="Delete item" onclick="cpmp.delete_item(\''+item.id+'\');"><span>'+annotation+'</span></div>');
 		}else{ // Edit an existent item
 			for(var i = 0, h = obj.items.length; i < h; i++){
 			  if(obj.items[i].id == item_id){
@@ -195,6 +195,46 @@ var cpmp = function($){
 				return;
 			}
 		}
+	}
+	
+	function swap(a, b){
+		var ea = $('#'+a),
+			eb = $('#'+b),
+			tmp;
+		
+		tmp = ea.html();
+		ea.html(eb.html());
+		eb.html(tmp);
+		ea.attr('id', b);
+		eb.attr('id', a);
+	}
+	
+	function move_item(item_id, disp){
+	
+		var l = obj.items.length,
+			e, ne,
+			np, p = -1,
+			tmp;
+	
+		if(l){
+			for(var i = 0; i < l; i++){
+				if(obj.items[i].id == item_id){
+					p = i;
+					break;
+				}
+			}
+			
+			np = p+disp;
+			if(np < l && np >= 0){
+				tmp = obj.items[p];
+				obj.items[p] = obj.items[np];
+				obj.items[np] = tmp;
+				
+				//ordering visual components
+				swap(obj.items[p].id, obj.items[np].id);
+				
+			} 
+		}	
 	}
 	
 	function clear_item_form(){
@@ -303,7 +343,7 @@ var cpmp = function($){
 	// Main program
 	
 	// Global events
-	$('.playlist_item').live('click', function(){ cpmp.edit_item($(this));});
+	$('.playlist_item span').live('click', function(){ cpmp.edit_item($(this).parents('.playlist_item'));});
 	
 	// CPMP object definition
 	var obj = {
@@ -322,6 +362,7 @@ var cpmp = function($){
 	obj.submit_item_form = submit_item_form;
 	obj.add_item = add_item;
 	obj.delete_item = delete_item;
+	obj.move_item = move_item;
 	obj.edit_item = edit_item;
 	obj.open_insertion_window = open_insertion_window;
 	
