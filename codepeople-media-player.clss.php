@@ -282,7 +282,10 @@ class CodePeopleMediaPlayer {
 
 				if($playlist){
 					foreach($playlist as $item){
-						$playlist_item_list .= '<div id="'.$item->id.'" class="playlist_item" style="cursor:pointer;"><input type="button" value="Delete item" onclick="cpmp.delete_item(\''.$item->id.'\');"><span>'.$item->annotation.'</span></div>';
+						$playlist_item_list .= '<div id="'.$item->id.'" class="playlist_item" style="cursor:pointer;">
+						<input type="button" value="Up" onclick="cpmp.move_item(\''.$item->id.'\', -1);" >
+						<input type="button" value="Down" onclick="cpmp.move_item(\''.$item->id.'\', 1);" >
+						<input type="button" value="Delete item" onclick="cpmp.delete_item(\''.$item->id.'\');"><span>'.$item->annotation.'</span></div>';
 					}
 				}
 				$insertion_button_text = __('Update Media Player');
