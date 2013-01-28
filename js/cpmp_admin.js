@@ -123,7 +123,7 @@ var cpmp = function($){
 			id 			: (item_id == "") ? new Date().getTime() : item_id,
 			annotation 	: annotation.replace(/\"/g,"&quot;"),
 			link	   	: $('#item_link').val().replace(/\"/g,"&quot;"),
-			poster	   	: $('#item_poster').val().replace(/\"/g,"&quot;") || "",
+			poster	   	: ($('#item_poster').length) ? $('#item_poster').val().replace(/\"/g,"&quot;") : "",
 			files		: [],
 			subtitles	: []
 		};
