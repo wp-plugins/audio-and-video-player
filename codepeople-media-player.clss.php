@@ -665,8 +665,8 @@ class CodePeopleMediaPlayer {
 				false,
 				true
 				);
-				
-				return '<'.$config_obj->type.' id="'.$id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.'-list">'.implode(' ', $pl_items).'</ul>' : '').'<noscript>
+				$sub_id = mt_rand(1, 99999);
+				return '<'.$config_obj->type.' id="'.$id.$sub_id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.$sub_id.'-list">'.implode(' ', $pl_items).'</ul>' : '').'<noscript>
 				audio-and-video-player require JavaScript
 			</noscript>';
 				
