@@ -585,28 +585,31 @@ class CodePeopleMediaPlayer {
 					// Get media files for item
 					foreach( $item->files as $file){
 						$file = htmlspecialchars($file);
-						$ext = strtolower(substr($file, strlen($file)-4));
-						if($ext[0] == '.') $ext = substr($ext, 1);
-						
-						switch ($ext){
-							case 'mp4':
-							case 'm4v':
-								$ext = 'mp4';
-							break;	
-							case 'webm':
-							case 'webma':
-							case 'webmv':	
-								$ext = 'webm';
-							break;	
-							case 'ogg':
-							case 'oga':
-							case 'ogv':	
-								$ext = 'ogg';
-							break;	
-							default:
-								$ext = $ext;
-						}
-						
+                        if(strpos(strtolower($file), 'youtube') !== false){
+                            $ext = 'youtube';
+                        }else{
+                            $ext = strtolower(substr($file, strlen($file)-4));
+                            if($ext[0] == '.') $ext = substr($ext, 1);
+                            
+                            switch ($ext){
+                                case 'mp4':
+                                case 'm4v':
+                                    $ext = 'mp4';
+                                break;	
+                                case 'webm':
+                                case 'webma':
+                                case 'webmv':	
+                                    $ext = 'webm';
+                                break;	
+                                case 'ogg':
+                                case 'oga':
+                                case 'ogv':	
+                                    $ext = 'ogg';
+                                break;	
+                                default:
+                                    $ext = $ext;
+                            }
+                        }    
 						if($first_file){
 							$mp_atts[] = 'src="'.$file.'"';
 							$mp_atts[] = 'type="'.$config_obj->type.'/'.$ext.'"';
