@@ -14,7 +14,7 @@ Audio and Video Player supported by all major browsers such as IE, Firefox, Oper
 
 **Audio and Video Player** allows to publish files: MP4, OGG, WebM, WMV, MP3, WAV, WMA and WebSRT subtitle files. **Audio and Video Player** is based on MediaElement.js which guarantees support for all browsers that implement the HTML5 standard. For older browsers, it supports Flash and Silverlight. **Audio and Video Player** allows to associate a playlist to your media player and change its looks to match the design of your blog as closely as possible.
 
-== Features ==
+**Features**
 
 * Allows to publish an Audio and Video player anywhere.
 * Support for audio and video files: MP4, OGG, WebM, WMV, MP3, WAV, WMA and WebSRT subtitle files.
@@ -24,7 +24,7 @@ Audio and Video Player supported by all major browsers such as IE, Firefox, Oper
 
 The base plugin, available for free from the WordPress Plugin Directory has all the features you need to create an audio and video player on your website.
 
-== Premium Features ==
+**Premium Features**
 Premium features are available in the pro version to extend the capabilities of this plugin:
 
 * Allows to publish multiple Audio and Video player anywhere.
