@@ -1,7 +1,7 @@
 === Audio And Video Player ===
 Contributors: codepeople
 Donate link: http://www.tsplayer.com/audio-and-video-player
-Tags: html5, video, audio, player, flash, Silverlight, mp4, mp3, ogg, webm, wmv, captions, subtitles, websrt, srt, iphone,  ipad, android
+Tags: html5,video,audio,player,flash,Silverlight,mp4,mp3,ogg,webm,wmv,captions,subtitles,websrt,srt,iphone,ipad,android
 Requires at least: 3.0.5
 Tested up to: 3.5
 Stable tag: 1.0.1
@@ -14,13 +14,22 @@ Audio and Video Player supported by all major browsers such as IE, Firefox, Oper
 
 **Audio and Video Player** allows to publish files: MP4, OGG, WebM, WMV, MP3, WAV, WMA and WebSRT subtitle files. **Audio and Video Player** is based on MediaElement.js which guarantees support for all browsers that implement the HTML5 standard. For older browsers, it supports Flash and Silverlight. **Audio and Video Player** allows to associate a playlist to your media player and change its looks to match the design of your blog as closely as possible.
 
-**Features:**
+== Features ==
 
-* Allows to publish Audio and Video player anywhere.
+* Allows to publish an Audio and Video player anywhere.
 * Support for audio and video files: MP4, OGG, WebM, WMV, MP3, WAV, WMA and WebSRT subtitle files.
 * Allows to associate a **playlist** to your media player.
 * Offers **several skins** to adjust the design of the media player to your web design.
 * Supports all the popular browsers on the web: Internet Explorer, Firefox, Chrome, Safari, Opera, as well as mobile devices such as iPhone, iPad and Android. For older browsers, this media player provides support for Flash and Silverlight.
+
+The base plugin, available for free from the WordPress Plugin Directory has all the features you need to create an audio and video player on your website.
+
+== Premium Features ==
+Premium features are available in the pro version to extend the capabilities of this plugin:
+
+* Allows to publish multiple Audio and Video player anywhere.
+* Allows to sell a file for each player.
+* Display a sales report to check easily the amount of sales.
 
 If you want more information about this plugin or another one don't doubt to visit my website:
 
@@ -77,12 +86,54 @@ To create a playlist please press "Create New Item". The data associated with a 
 **Songs / Videos:** mandatory field where you enter the URL to the media file. Browsers support different multimedia file formats, therefore it is advisable to enter different formats for the same item, enabling each browser to select the file format that  it supports.
 
 **Subtitles:** Enter the URL to the subtitle file and the subtitle language.
-
+otific
 After entering all data item press "Insert / Update item on playlist"
+
+**For Sale (available only for Premium version)**
+
+**Select the file:** Select the file for sale.
+
+**Enter price:** Enter the file's price.
+
+**Promotional text:** Enter a promotional text.
 
 **Inserting media player**
 
 To insert the media player in your website go to the editing of posts / pages and click the icon for **Audio and Video Player** in the web editor. This will load a window where you will be able to select your media player. After inserting the media player save the changes on the website.
+
+**Configure PayPal account (only for Premium version)**
+
+For selling files associated to the players, is required configure the PayPal account in the settings page of "Audio and Video player"
+
+**Enable Paypal Payments?:** Enable the PayPal account.
+
+**Paypal email:** Enter the email associated to the PayPal account.
+
+**Currency:** Select the currency for selling.
+
+**Currency Symbol:** Enter the currency symbol.
+
+**Paypal language:** Select the PayPal interface's language.
+
+**Paypal button for instant purchases:** Select the PayPal button to use in website.
+
+**Download link valid for:** Enter the number of days to restrict the download link.
+
+**Notification "from" email:** Enter the email address to use as "from" attribute in the notification emails.
+
+**Send notification to email:** Enter the email address to receive the sales notifications.
+
+**Email subject confirmation to user:** Enter the subject of notification emails sent to the buyers.
+
+**Email confirmation to user:** Enter the content of notification emails sent to the buyers ( don't remove the text %INFORMATION%, it will be replaced by product's information)
+
+**Email subject notification to admin:** Enter the subject of notification emails sent to the seller.
+
+**Email notification to admin:** Enter the content of notification emails sent to the seller ( don't remove the text %INFORMATION%, it will be replaced by product's information)
+
+**Checking the sales reports (only for Premium version)**
+
+For checking the sales reports, press the menu option "Sales Report" and select the interval of time for checking. The sales report displays the list of sales in the selected interval and the total amount distributed by currencies.
 
 == Frequently Asked Questions ==
 

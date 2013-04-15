@@ -43,7 +43,7 @@ class CodePeopleMediaPlayer {
 			UNIQUE KEY id (id)
          );";             
 		$wpdb->query($sql); 
-	}
+    }
 	
 	function _get_skin_list(&$selected_skin, $type, &$width, &$height){
 		$skin_dir = CPMP_PLUGIN_DIR.'/skins';
@@ -197,11 +197,13 @@ class CodePeopleMediaPlayer {
 			
 			$sql = "SELECT id, player_name FROM ".$wpdb->prefix.CPMP_PLAYER.";";
 			$players = $wpdb->get_results($sql);
-			
+?>            
+			<div class="wrap">
+<?php            
 			if(count($players)){
 				wp_enqueue_script('cpmp-admin', plugin_dir_url(__FILE__).'js/cpmp_admin.js', array('jquery'));
 ?>		
-				<div class="wrap">
+				
 			
 					<form method="post" action="<?php $_SERVER['REQUEST_URI']; ?>">
 					<?php
@@ -222,10 +224,10 @@ class CodePeopleMediaPlayer {
 							<input type="button" value="Remove media player" class="button-primary" onclick="cpmp.remove_player();">
 						</div>
 						<div>
-							<?php _e('Only one media player can be inserted in the free version of Audio and Video Player. To increase the media player features, get the professional version on <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio and Video Player</a>.'); ?>
+							<?php _e('Only one media player can be inserted in the free version of Audio and Video Player. To increase the media player features, get the professional version on <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio and Video Player</a>'); ?>
 						</div>
 					</form>	
-			
+                    
 <?php
 			} // End player edition	
 			else{	
@@ -239,13 +241,101 @@ class CodePeopleMediaPlayer {
 							<h3>Create new one</h3>
 							<input type="radio" name="player_type" value="audio" checked> Audio <input type="radio" name="player_type" value="video"> Video <input type="submit" value="Create new media player" class="button-primary" />
 						</div>
-						<div>
+						<p style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;">
 							<?php _e('Only one media player can be inserted in the free version of Audio and Video Player. To increase the media player features, get the professional version on <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio and Video Player</a>.'); ?>
-						</div>
+						</p>
 					</form>
-			</div>
+			
 <?php		
 			} // End create new player
+?>            
+                <p style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;">
+                <?php _e('The PayPal settings are available only in the commercial version of <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio and Video Player</a>.'); ?>
+                </p>
+                <p>For sale a file associated to your player, complete the PayPal data.<br />
+                It is possible to create the media player with samples of audio or video files, and then associate a full version of files for sale.</p>
+                <div style="border: 1px solid #CCC;padding:10px;position:relative;clear:both;">
+                    <h3>PayPal settings</h3>
+                    <table class="form-table">
+                        <tr valign="top">        
+                            <th scope="row">Enable Paypal Payments?</th>
+                            <td><input type="checkbox" DISABLED value="1"  /></td>
+                        </tr>    
+                
+                        <tr valign="top">        
+                            <th scope="row">Paypal email</th>
+                            <td><input type="text" size="40" DISABLED /></td>
+                        </tr>
+                     
+                        <tr valign="top">
+                            <th scope="row">Currency</th>
+                            <td>
+                                <select name="cpmp_paypal_currency">
+                                    <option>USD</option>
+                                </select>
+                            </td>
+                        </tr>
+                    
+                        <tr valign="top">
+                            <th scope="row">Currency Symbol</th>
+                            <td><input type="text" value="$" DISABLED /></td>
+                        </tr>
+                    
+                        <tr valign="top">
+                            <th scope="row">Paypal language</th>
+                            <td>
+                                <select DISABLED>
+                                    <option>United States - U.S. English</option>
+                                </select>
+                            </td>
+                        </tr>  
+                    
+                        <tr valign="top">
+                            <th scope="row">Paypal button for instant purchases</th>
+                            <td>
+                            <input type="radio" DISABLED /><img src="<?php print(CPMP_PLUGIN_URL.'/images/paypal_buttons/button_a.gif'); ?>" />
+                            <input type="radio" DISABLED /><img src="<?php print(CPMP_PLUGIN_URL.'/images/paypal_buttons/button_b.gif'); ?>" />
+                            <input type="radio" DISABLED CHECKED /><img src="<?php print(CPMP_PLUGIN_URL.'/images/paypal_buttons/button_c.gif'); ?>" />
+                            <input type="radio" DISABLED /><img src="<?php print(CPMP_PLUGIN_URL.'/images/paypal_buttons/button_d.gif'); ?>" />
+                            </td>
+                        </tr> 
+                    
+                        <tr valign="top">
+                            <th scope="row">Download link valid for</th>
+                            <td><input type="text" value="10" DISABLED /> day(s)</td>
+                        </tr>  
+                    </table>
+                    <h3>Purchase notifications</h3>
+                    <table class="form-table">
+                        <tr valign="top">        
+                            <th scope="row">Notification "from" email</th>
+                            <td><input type="text" size="40" DISABLED /></td>
+                        </tr>    
+                        <tr valign="top">        
+                            <th scope="row">Send notification to email</th>
+                            <td><input type="text" DISABLED /></td>
+                        </tr>
+                        <tr valign="top">
+                            <th scope="row">Email subject confirmation to user</th>
+                            <td><input type="text" DISABLED /></td>
+                        </tr>
+                        <tr valign="top">
+                            <th scope="row">Email confirmation to user</th>
+                            <td><textarea DISABLED cols="60" rows="5"></textarea></td>
+                        </tr>
+                        <tr valign="top">
+                            <th scope="row">Email subject notification to admin</th>
+                            <td><input type="text" DISABLED size="40"  /></td>
+                        </tr>
+                        <tr valign="top">
+                            <th scope="row">Email notification to admin</th>
+                            <td><textarea DISABLED  cols="60" rows="5"></textarea></td>
+                        </tr>
+                     </table>
+                     <div><input type="submit" value="Save PayPal settings" class="button-primary" DISABLED /></div>
+                </div>
+            </div>
+<?php                    
 		}else{
 			if(!isset($_POST['player_id'])){
 						$sql = "SELECT count(*) FROM ".$wpdb->prefix.CPMP_PLAYER.";";
@@ -499,6 +589,46 @@ class CodePeopleMediaPlayer {
 							</tr>
 						</tbody>
 					</table>
+                    <p style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;">
+                The sales are available only in the commercial version of <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio and Video Player</a>.</p>
+                    <h3>For Sale</h3>
+                    <table class="form-table">
+                        <tbody>
+							<tr valign="top">
+								<th>
+                                    <label>Select the file: </label>
+                                </th>
+                                <td>
+                                    <div>
+                                        <input type="text" DISABLED />
+                                        <input type="button" class="button" value="Select file" DISABLED />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+								<th>
+                                    <label>Enter price: </label>
+                                </th>
+                                <td>
+                                    <div>
+                                        <input type="text" DISABLED />$
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+								<th>
+                                    <label>Promotional text: </label>
+                                </th>
+                                <td>
+                                    <div>
+                                        <textarea DISABLED cols="60" rows="5"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>    
+                    
+                    
 					<?php
 						// create a custom nonce for submit verification later
 						echo '<input type="hidden" name="cpmp_player_create_update_nonce" value="' . wp_create_nonce(__FILE__) . '" />';
