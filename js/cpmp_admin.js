@@ -343,8 +343,11 @@ var cpmp = function($){
 	// Main program
 	
 	// Global events
-	$('.playlist_item span').live('click', function(){ cpmp.edit_item($(this).parents('.playlist_item'));});
-	
+    $('#items_container').bind('click', function(evt){ 
+        var t = $(evt.target);
+        if(t[0].tagName == 'SPAN' && t.parents('.playlist_item').length > 0) cpmp.edit_item(t.parents('.playlist_item'));
+    });
+    
 	// CPMP object definition
 	var obj = {
 		items:[]

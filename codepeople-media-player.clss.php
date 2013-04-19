@@ -756,7 +756,8 @@ class CodePeopleMediaPlayer {
 					foreach( $item->subtitles as $subtitle){
 						$location = htmlspecialchars($subtitle->link);
 						$language = $subtitle->language;
-						$mp_subtitles[] = '<track src="'.$location.'" kind="subtitles" srclang="'.$language.'"></track>';
+                        if($first_item)
+                            $mp_subtitles[] = '<track src="'.$location.'" kind="subtitles" srclang="'.$language.'"></track>';
 						$item_subtitles[] = '{"kind" : "subtitles", "src" : "'.$location.'", "srclang" : "'.$language.'"}';
 					}
 					
@@ -784,14 +785,6 @@ class CodePeopleMediaPlayer {
 				}
 				
 				wp_enqueue_script( 
-				'html5_media_player_script',
-				plugin_dir_url(__FILE__).'js/mediaelement-and-player.min.js',
-				array('jquery'),
-				false,
-				true
-				);
-				
-				wp_enqueue_script( 
 				'codepeople_media_player_script',
 				plugin_dir_url(__FILE__).'js/codepeople-plugins.js',
 				array('jquery'),
@@ -799,9 +792,7 @@ class CodePeopleMediaPlayer {
 				true
 				);
 				$sub_id = mt_rand(1, 99999);
-				return '<'.$config_obj->type.' id="'.$id.$sub_id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.$sub_id.'-list">'.implode(' ', $pl_items).'</ul>' : '').'<noscript>
-				audio-and-video-player require JavaScript
-			</noscript>';
+				return '<div id="ms_avp"><'.$config_obj->type.' id="'.$id.$sub_id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.$sub_id.'-list">'.implode(' ', $pl_items).'</ul>' : '').'<noscript>audio-and-video-player require JavaScript</noscript></div>';
 				
 			}else{
 				return '';
