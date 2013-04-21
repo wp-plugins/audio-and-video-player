@@ -201,7 +201,7 @@ class CodePeopleMediaPlayer {
 			<div class="wrap">
 <?php            
 			if(count($players)){
-				wp_enqueue_script('cpmp-admin', plugin_dir_url(__FILE__).'js/cpmp_admin.js', array('jquery'));
+				wp_enqueue_script('cpmp-admin', plugin_dir_url(__FILE__).'js/cpmp_admin.js', array('jquery'), null, true);
 ?>		
 				
 			
@@ -344,7 +344,7 @@ class CodePeopleMediaPlayer {
 							header('location:options-general.php?page=codepeople-media-player.php');
 					}
 			wp_enqueue_style('thickbox');
-			wp_enqueue_script('cpmp-admin', plugin_dir_url(__FILE__).'js/cpmp_admin.js', array('jquery', 'thickbox'));
+			wp_enqueue_script('cpmp-admin', plugin_dir_url(__FILE__).'js/cpmp_admin.js', array('jquery', 'thickbox'), null, true);
 			
 			$image_library_url = get_upload_iframe_src( 'image', null, 'library' );
 			$image_library_url = remove_query_arg( array('TB_iframe'), $image_library_url );
@@ -648,10 +648,14 @@ class CodePeopleMediaPlayer {
 		global $wpdb;
 		
 		wp_enqueue_style('wp-jquery-ui-dialog');
+		wp_enqueue_script('jquery-ui-core');
+		wp_enqueue_script('jquery-ui-dialog');
 		wp_enqueue_script(
 			'cpmp-admin',
 			CPMP_PLUGIN_URL.'/js/cpmp_admin.js',
-			array('jquery', 'jquery-ui-dialog')
+			array('jquery', 'jquery-ui-core', 'jquery-ui-dialog'),
+            null,
+            true
 		);
 		
 		// Load players
