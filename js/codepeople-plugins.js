@@ -143,7 +143,7 @@ if(typeof jQuery!="undefined"){mejs.$=jQuery}else{if(typeof ender!="undefined"){
 			// The playlist loop was activated
 			me.loop = (n.attr('loop')) ? true : false;
 			
-			// Set the player object associated to the playlist
+            // Set the player object associated to the playlist
 			me.player = player;
 			// Set the player id
 			me.playerId = id;
@@ -249,7 +249,7 @@ if(typeof jQuery!="undefined"){mejs.$=jQuery}else{if(typeof ender!="undefined"){
 				options  = me.player.options,
 				isVideo  = me.player.isVideo,
 				tag      = (isVideo) ? '<video' : '<audio';
-			
+
 			// Set ID
 			tag += ' id="' + me.playerId + '"';
 			
@@ -271,8 +271,8 @@ if(typeof jQuery!="undefined"){mejs.$=jQuery}else{if(typeof ender!="undefined"){
 					tag += ' poster="' + item.poster + '"';
 				}
 				
-				tag += '>';
-							
+				tag += ' autoplay >';
+
 				// Assign sources
 				if(item.source){
 					if($.isArray(item.source)){ // many source formats
