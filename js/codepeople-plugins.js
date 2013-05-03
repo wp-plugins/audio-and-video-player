@@ -115,7 +115,29 @@ if(typeof jQuery!="undefined"){mejs.$=jQuery}else{if(typeof ender!="undefined"){
 			id 		 = n.attr('id'),
 			clss 	 = n.attr('class').split(/\s+/),
 			playlist = $('[id="'+id+'-list"]');
+        
+        // The playlist loop was activated
+        me.loop = (n.attr('loop')) ? true : false;
+
+		// Player size
+        me.playerWidth  = c.width();
+        me.playerHeight = c.height();
 		
+        // Set the player object associated to the playlist
+        me.player = player;
+        
+        // Set the player id
+        me.playerId = id;
+        
+        // Playback the next playlist item
+		me.player.media.addEventListener('ended', function (e) {
+            if(me.playlist)
+                me.playNext();
+            else if(me.loop){
+                me.player.play();
+            }    
+        }, false);			
+        
 		// There is a playlist associated to the player
 		if(playlist.length){
 			// Set the playlist node
@@ -133,31 +155,14 @@ if(typeof jQuery!="undefined"){mejs.$=jQuery}else{if(typeof ender!="undefined"){
 				}
 			}
 
-			// Player size
-			me.playerWidth  = c.width();
-			me.playerHeight = c.height();
-			
 			// Set the playlist width
 			me.playlist.width(c.width());
 			
-			// The playlist loop was activated
-			me.loop = (n.attr('loop')) ? true : false;
-			
-            // Set the player object associated to the playlist
-			me.player = player;
-			// Set the player id
-			me.playerId = id;
-
 			// Set a player wrapper
 			//me.playerWrapper = me.player.container.wrap('<div id="'+id+'-wrapper"></div>').parent();
 
 			// Associate click events to the playlist items
 			$('li', me.playlist).click(function(){me.selectItem($(this));});
-
-			// Playback the next playlist item
-			me.player.media.addEventListener('ended', function (e) {
-				me.playNext();
-			}, false);
 			
 			// Associate the playist to the music player
 			me.player.playlist = me;
@@ -345,7 +350,6 @@ if(typeof jQuery!="undefined"){mejs.$=jQuery}else{if(typeof ender!="undefined"){
 			}
 			
 			//me.player.pause();
-			
 			if(current_item.length){ // If playlist is not empty
 				if( ($(current_item).is(':last-child') && next) ||  ($(current_item).is(':first-child') && !next)) { // if it is last - stop playing or jump to the first item
 					$(current_item).removeClass('current');
