@@ -709,7 +709,6 @@ class CodePeopleMediaPlayer {
 				if($config_obj->autoplay) $mp_atts[] = 'autoplay="'.$config_obj->autoplay.'"';
 				if($config_obj->preload) $mp_atts[] = 'preload="'.$config_obj->preload.'"';
 				
-				$first_file = true;
 				$first_item = true;
 				// Set sources and playlist
 				foreach($playlist_arr as $i => $item){
@@ -744,11 +743,7 @@ class CodePeopleMediaPlayer {
                                     $ext = $ext;
                             }
                         }    
-						if($first_file){
-							$mp_atts[] = 'src="'.$file.'"';
-							$mp_atts[] = 'type="'.$config_obj->type.'/'.$ext.'"';
-							$first_file = false;
-						}elseif($first_item){
+						if($first_item){
 							$srcs[] = '<source src="'.$file.'" type="'.$config_obj->type.'/'.$ext.'" />';
 						}
 						
