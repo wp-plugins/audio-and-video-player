@@ -743,7 +743,9 @@ class CodePeopleMediaPlayer {
                                     $ext = $ext;
                             }
                         }    
-						if($first_item){
+						
+                        if($first_item){
+                            if(!empty($item->poster)) $mp_atts[] = 'poster="'.esc_url($item->poster).'"';
 							$srcs[] = '<source src="'.$file.'" type="'.$config_obj->type.'/'.$ext.'" />';
 						}
 						

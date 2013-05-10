@@ -2,6 +2,8 @@
 #ms_avp{}
 #ms_avp object,#ms_avp embed,#ms_avp video{margin:0; background:#000;}
 #ms_avp .mejs-mediaelement{background:none;}
+#ms_avp .mejs-container{overflow:hidden;}
+#ms_avp .mejs-poster img{margin:0;}
 #ms_avp .mejs-container.classic-skin {
 	outline: 1px solid rgb(23,41,78);
 	min-height:65px;
