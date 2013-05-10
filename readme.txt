@@ -65,9 +65,9 @@ If you want more information about this plugin or another one don't doubt to vis
 
 **Editing Audio and Video Players**
 
-On the **Audio and Video Player** page, you will see the already generated media players and the button to create a new player.  To create a new audio or video player just select the type of player: Audio or Video - and press the button "Create new media player." To edit an existing nedia player, just select it in the list of existing players and press "Edit media player".
+On the **Audio and Video Player** page, you will see the already generated media players and the button to create a new player.  To create a new audio player or video player just select the type of player: Audio or Video - and press the button "Create new media player." To edit an existing audio player or video player, just select it in the list of existing players and press "Edit media player".
 
-**Creating and Editing of Audio and Video Player**
+**Creating and Editing of Audio Player or Video Player**
 
 **Select the player skin:** the first skin will be selected by default. All the previously purchased skins will be loaded here, as well as the skins available for the audio and video player.
 
@@ -75,7 +75,7 @@ On the **Audio and Video Player** page, you will see the already generated media
 
 **Width:** Enter the width of the audio and video player. Under the field you will see the values recommended for the selected skin. Every skin has a different recommended value.
 
-**Height:** Enter the height of the audio and video player.  Under the field you will see the values recommended for the selected skin. Every skin has a different recommended value.
+**Height:** Enter the height of the audio and video player.  Under the field you will see the values recommended for the selected skin. Every skin has a different recommended value. If you are creating an audio player, the recommended height will be lower than height recommended for a video player.
 
 **Autoplay:** Mark the checkbox if you want your media player to initialize in "ON" mode. 
 
@@ -109,7 +109,7 @@ For Sale (the next options are available only for Premium version of plugin)
 
 **Promotional text:** Enter a promotional text.
 
-**Inserting Audio and Video Player**
+**Inserting the audio player or the video player in posts or pages**
 
 To insert the audio and video player in your website go to the editing of posts / pages and click the icon for **Audio and Video Player** in the web editor. This will load a window for select the audio and video player by the name entered in player creation. After inserting the media player in your post save the changes on the website.
 
