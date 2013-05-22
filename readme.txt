@@ -1,4 +1,4 @@
-=== Audio And Video Player ===
+=== CP Media Player - Audio Player and Video Player ===
 Contributors: codepeople
 Donate link: http://www.tsplayer.com/audio-and-video-player
 Tags: html5,video,audio,player,flash,silverlight,mp4,mp3,ogg,webm,wmv,captions,subtitles,websrt,iphone,ipad,android,paypal
@@ -8,13 +8,13 @@ Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Audio and Video Player supported by all major browsers such as IE, Firefox, Opera, Safari, Chrome and mobile devices: iPhone, iPad, Android.
+CP Media Player - Audio Player and Video Player supported by all major browsers such as IE, Firefox, Opera, Safari, Chrome and mobile devices: iPhone, iPad, Android.
 
 == Description ==
 
-Audio and Video Player features:
+CP Media Player - Audio Player and Video Player features:
 
-	♪ Publish an Audio and Video player anywhere
+	♪ Publish an Audio player and Video player anywhere
 	♪ Support for audio and video files: MP4, OGG, WebM, WMV, MP3, WAV, WMA 
 	♪ Support WebSRT subtitle files
 	♪ Allow playlist
@@ -22,32 +22,32 @@ Audio and Video Player features:
 	♪ Supported by mobile devices: iPhone, iPad and Android devices
 	
 
-**Audio and Video Player** allows to publish files: MP4, OGG, WebM, WMV, MP3, WAV, WMA and WebSRT subtitle files. **Audio and Video Player** is based on MediaElement.js which guarantees support for all browsers that implement the HTML5 standard. For older browsers, it supports Flash and Silverlight. **Audio and Video Player** allows to associate a playlist to your media player and change its looks to match the design of your blog as closely as possible.
+**CP Media Player - Audio Player and Video Player** allows to publish files: MP4, OGG, WebM, WMV, MP3, WAV, WMA and WebSRT subtitle files. **CP Media Player - Audio Player and Video Player** is based on MediaElement.js which guarantees support for all browsers that implement the HTML5 standard. For older browsers, it supports Flash and Silverlight. **CP Media Player - Audio Player and Video Player** allows to associate a playlist to your media player and change its looks to match the design of your blog as closely as possible.
 
 **More about the Main Features**
 
-* Allows to publish an Audio and Video player anywhere.
-* Support for audio and video files: MP4, OGG, WebM, WMV, MP3, WAV, WMA and WebSRT subtitle files.
-* Allows to associate a **playlist** to your media player.
-* Offers **several skins** to adjust the design of the media player to your web design.
-* Supports all the popular browsers on the web: Internet Explorer, Firefox, Chrome, Safari, Opera, as well as mobile devices such as iPhone, iPad and Android. In new versions of browsers, the audio and video player tries to use the html5 tags: audio and video, for older browsers, the media player provides support for Flash and Silverlight.
+* Allows to publish an Audio player and Video player anywhere(a post, page, other post types, or directly on templates).
+* Support for audio and video files: MP4, OGG, WebM, WMV, MP3, WAV, WMA, FLV and WebSRT subtitle files.
+* Allows to associate a **playlist** to your CP Media Player - Audio Player and Video Player.
+* Offers **several skins** to adjust the design of the CP Media Player - Audio Player and Video Player to your web design.
+* Supports all the popular browsers on the web: Internet Explorer, Firefox, Chrome, Safari, Opera, as well as mobile devices such as iPhone, iPad and Android. In new versions of browsers, the CP Media Player - Audio Player and Video Player tries to use the html5 tags: audio and video, for older browsers, the media player provides support for Flash and Silverlight.
 
-The base plugin, available for free from the WordPress Plugin Directory has all the features you need to create an audio and video player on your website.
+The base plugin, available for free from the WordPress Plugin Directory has all the features you need to create an CP Media Player - Audio Player and Video Player on your website.
 
 **Premium Features**
 
 Premium features are available in the pro version to extend the capabilities of this plugin:
 
-* Allows to publish multiple Audio and Video player anywhere.
-* Allows to sell a file for each player.
+* Allows to publish multiple CP Media Player - Audio Player and Video Player.
+* Allows to sell a file for each player, using PayPal as payment gateway.
 * Display a sales report to check easily the amount of sales.
 
-If you want more information about this plugin or another one don't doubt to visit my website:
+If you want more information about this plugin CP Media Player - Audio Player and Video Player, or another one don't doubt to visit my website:
 
 [http://www.tsplayer.com/html5-audio-and-video-player](http://www.tsplayer.com/html5-audio-and-video-player "TSPlayer Multimedia Solutions")
 
 == Instalation ==
-**To install Audio and Video Player, follow these steps:**
+**To install CP Media Player - Audio Player and Video Player, follow these steps:**
 
 1. Download and unzip the plugin
 2. Upload the Entire html5-audio-and-video-player / directory to the / wp-content/plugins / directory
@@ -56,16 +56,16 @@ If you want more information about this plugin or another one don't doubt to vis
 **To install new skins in your media player:**
 
 1. Download and unzip the skin.
-2. Upload the desired skin directory to / wp-content/plugins/html5-audio-and-video-player/skins/
-3. Associate the skin with your media player through the plugin management page.
+2. Upload the desired skin directory to /wp-content/plugins/html5-audio-and-video-player/skins/
+3. Associate the skin with your CP Media Player - Audio Player and Video Player through the plugin management page.
 
 == Interface ==
 
-**Audio and Video Player** has an extensive set of configuration variables that provides great flexibility to this plugin. Media players are first generated on the **Audio and Video Player** page. Then they are to be inserted into your blog directly from the Post/Page editing interface. Generating all audio and video players in the same environment will facilitate editing of media players and inserting of the same audio or video player on different pages of your website or blog.
+** CP Media Player - Audio Player and Video Player ** has an extensive set of configuration variables that provides great flexibility to this plugin. Media players are first generated on the ** CP Media Player - Audio Player and Video Player ** page. Then they are to be inserted into your blog directly from the Post/Page editing interface. Generating all CP Media Player - Audio Player and Video Player in the same environment will facilitate editing of media players and inserting of the same audio or video player on different pages of your website or blog.
 
-**Editing Audio and Video Players**
+**Editing a CP Media Player - Audio Player and Video Player**
 
-On the **Audio and Video Player** page, you will see the already generated media players and the button to create a new player.  To create a new audio player or video player just select the type of player: Audio or Video - and press the button "Create new media player." To edit an existing audio player or video player, just select it in the list of existing players and press "Edit media player".
+On the ** CP Media Player - Audio Player and Video Player ** page, you will see the already generated media players and the button to create a new audio player or video player.  To create a new audio player or video player just select the type of player: Audio player or Video player - and press the button "Create new media player." To edit an existing CP Media Player - Audio Player and Video Player, just select it in the list of existing media players and press "Edit media player".
 
 **Creating and Editing of Audio Player or Video Player**
 
@@ -73,11 +73,11 @@ On the **Audio and Video Player** page, you will see the already generated media
 
 **Player name:** mandatory field that will allow to identify the media player for the insertion process on your website.
 
-**Width:** Enter the width of the audio and video player. Under the field you will see the values recommended for the selected skin. Every skin has a different recommended value.
+**Width:** Enter the width of the audio player or video player. Under the field you will see the values recommended for the selected skin. Every skin has a different recommended value.
 
-**Height:** Enter the height of the audio and video player.  Under the field you will see the values recommended for the selected skin. Every skin has a different recommended value. If you are creating an audio player, the recommended height will be lower than height recommended for a video player.
+**Height:** Enter the height of the audio player or video player.  Under the field you will see the values recommended for the selected skin. Every skin has a different recommended value. If you are creating an audio player, the recommended height will be lower than height recommended for a video player.
 
-**Autoplay:** Mark the checkbox if you want your media player to initialize in "ON" mode. 
+**Autoplay:** Mark the checkbox if you want your CP Media Player - Audio Player and Video Player to initialize in "ON" mode. 
 
 Note: Some devices do not support autoplay.
 
@@ -93,15 +93,15 @@ To create a playlist please press "Create New Item". The data associated with a 
 
 **Associated link:** URL to a web page with information associated to the item.
 
-**Poster:** URL to an image associated to the item, only available with the video type media player.
+**Poster:** URL to an image associated to the item, only available for the video player.
 
-**Songs / Videos:** mandatory field where you enter the URL to the audio or video file. Browsers support different multimedia file formats, therefore it is advisable to enter different formats for the same item, enabling each browser to select the file format that  it supports. The audio and video formats supported by the player are MP4, OGG, WebM, WMV, MP3, WAV, WMA.
+**Songs / Videos:** mandatory field where you enter the URL to the audio or video file. Browsers support different multimedia file formats, therefore it is advisable to enter different formats for the same item, enabling each browser to select the file format that  it supports. The audio and video formats supported by the player are MP4, OGG, WebM, WMV, FLV, MP3, WAV, WMA.
 
-**Subtitles:** Enter the URL to the subtitle file and the subtitle language. WebSRT is the format of subtitle file supported by the player.
+**Subtitles:** Enter the URL to the subtitle file and the subtitle language. WebSRT is the format of subtitle file supported by the media player.
 
 After entering all data item press "Insert / Update item on playlist"
 
-For Sale (the next options are available only for Premium version of plugin)
+For Sale (the next options are available only for Premium version of CP Media Player - Audio Player and Video Player)
 
 **Select the file:** Select the file for sale.
 
@@ -109,16 +109,16 @@ For Sale (the next options are available only for Premium version of plugin)
 
 **Promotional text:** Enter a promotional text.
 
-**Inserting the audio player or the video player in posts or pages**
+**Inserting CP Media Player - Audio Player and Video Player in posts or pages**
 
-To insert the audio and video player in your website go to the editing of posts / pages and click the icon for **Audio and Video Player** in the web editor. This will load a window for select the audio and video player by the name entered in player creation. After inserting the media player in your post save the changes on the website.
+To insert CP Media Player - Audio Player and Video Player in your website go to the editing of posts / pages and click the icon for ** CP Media Player - Audio Player and Video Player ** in the web editor. This will load a window for select the audio player or video player by the name entered in player creation. After inserting the media player in your post save the changes on the website.
 
 **Configure PayPal account (only for Premium version)**
 
-The premium version of Audio and Video player allows to enter a file  for selling, it uses PayPal as payment gateway.
-For selling files associated to the players, is required configure the PayPal account in the settings page of "Audio and Video player"
+The premium version of CP Media Player - Audio Player and Video Player allows to enter a file  for selling, it uses PayPal as payment gateway.
+For selling files associated to the players, is required configure the PayPal account in the settings page of "CP Media Player - Audio Player and Video Player"
 
-**Enable Paypal Payments?:** Enable the PayPal account. If this option is unchecked, the Audio and Video player can't be used to commercialize the media files.
+**Enable Paypal Payments?:** Enable the PayPal account. If this option is unchecked, CP Media Player - Audio Player and Video Player can't be used to commercialize the media files.
 
 **Paypal email:** Enter the email addresss associated to the PayPal account.
 
@@ -152,7 +152,7 @@ In a commerce is common for some sales ending in refund, in this case the sale r
 
 == Frequently Asked Questions ==
 
-= Q: How I know about the new skins for media player? =
+= Q: How I know about the new skins for CP Media Player - Audio Player and Video Player? =
 
 A: The skins list is loaded from our website, so you always have access to the actualized skins list.
 
@@ -166,6 +166,6 @@ A: Yes of course, press the "Add another one" button and enter the data related 
 
 == Screenshots ==
 
-1. Audio and Video Player
+1. CP Media Player - Audio Player and Video Player
 2. Creation page
-3. Audio and Video Player insertion
+3. CP Media Player - Audio Player and Video Player insertion
