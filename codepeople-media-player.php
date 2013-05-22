@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Audio And Video Player
+Plugin Name: CP Media Player - Audio Player and Video Player
 Plugin URI: http://www.tsplayer.com/audio-and-video-player
-Description: Audio and Video Player is an audio and video player that allows you to post multimedia files on your website or blog in a simple way while providing compatibility with all major browsers such as IE, Firefox, Opera, Safari, Chrome and mobile devices: iPhone, iPad, Android.
+Description: CP Media Player - Audio Player and Video Player allows you to post multimedia files on your website or blog in a simple way while providing compatibility with all major browsers such as IE, Firefox, Opera, Safari, Chrome and mobile devices: iPhone, iPad, Android.
 Author: CodePeople
 Version: 1.0.1
 Author URI: http://www.tsplayer.com

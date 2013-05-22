@@ -343,7 +343,7 @@ k;g++)if(d[g].isSeparator)e+='<div class="mejs-contextmenu-separator"></div>';el
 					tag += ' poster="' + item.poster + '"';
 				}
 				
-				tag += ' autoplay >';
+				tag += ' >';
 
 				// Assign sources
 				if(item.source){
