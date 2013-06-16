@@ -60,6 +60,9 @@ If you want more information about this plugin CP Media Player - Audio Player an
 3. Associate the skin with your CP Media Player - Audio Player and Video Player through the plugin management page.
 
 == Interface ==
+The video includes the features of free and premium versions of plugin, please, check the features list to detect each of them.
+
+[youtube https://www.youtube.com/watch?v=Bb7MKspqsUo]
 
 ** CP Media Player - Audio Player and Video Player ** has an extensive set of configuration variables that provides great flexibility to this plugin. Media players are first generated on the ** CP Media Player - Audio Player and Video Player ** page. Then they are to be inserted into your blog directly from the Post/Page editing interface. Generating all CP Media Player - Audio Player and Video Player in the same environment will facilitate editing of media players and inserting of the same audio or video player on different pages of your website or blog.
 
