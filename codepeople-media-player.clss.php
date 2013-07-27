@@ -72,7 +72,7 @@ class CodePeopleMediaPlayer {
 							$c++;
 							
 							if($selected_skin == $skin_data['id']){
-								$skins_list .= ' class="'.skin_selected.'" style="border: 1px dotted #CCC;margin-left:5px;cursor:pointer;" ';
+								$skins_list .= ' class="skin_selected" style="border: 1px dotted #CCC;margin-left:5px;cursor:pointer;" ';
 								$width  = ((isset($skin_data[$type]["width"])) ? $skin_data[$type]["width"] : '');
 								$height = ((isset($skin_data[$type]["height"])) ? $skin_data[$type]["height"] : '');
 							}else	
@@ -145,7 +145,7 @@ class CodePeopleMediaPlayer {
 		<p  style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;"><?php _e('For any issues with the media player, go to our <a href="http://www.tsplayer.com/contact-us" target="_blank">contact page</a> and leave us a message.'); ?></p>
 		
 <?php	
-		if(wp_verify_nonce($_POST['cpmp_player_create_update_nonce'], __FILE__)){
+		if(isset($_POST['cpmp_player_create_update_nonce']) && wp_verify_nonce($_POST['cpmp_player_create_update_nonce'], __FILE__)){
 			// Save player's data
 			// Constructs the configuration stdClass
 			$conf = new stdClass;
@@ -183,17 +183,18 @@ class CodePeopleMediaPlayer {
 			}	
 		}
 		
-		if ((!wp_verify_nonce($_POST['cpmp_player_edition_nonce'],__FILE__) && !wp_verify_nonce($_POST['cpmp_player_creation_nonce'],__FILE__)) || (wp_verify_nonce($_POST['cpmp_player_edition_nonce'],__FILE__) && isset($_POST['cpmp_action']) && $_POST['cpmp_action'] == 'remove')){
-		
-			$wpdb->query( 
-				$wpdb->prepare( 
-					"
-					 DELETE FROM ".$wpdb->prefix.CPMP_PLAYER."
-					 WHERE id = %d
-					",
-						$_POST['player_id'] 
-					)
-			);
+		if (( (empty($_POST['cpmp_player_edition_nonce']) || !wp_verify_nonce($_POST['cpmp_player_edition_nonce'],__FILE__)) && (empty($_POST['cpmp_player_creation_nonce']) || !wp_verify_nonce($_POST['cpmp_player_creation_nonce'],__FILE__))) || (isset($_POST['cpmp_player_edition_nonce']) && wp_verify_nonce($_POST['cpmp_player_edition_nonce'],__FILE__) && isset($_POST['cpmp_action']) && $_POST['cpmp_action'] == 'remove')){
+            if(isset($_POST['player_id'])){
+                $wpdb->query( 
+                    $wpdb->prepare( 
+                        "
+                         DELETE FROM ".$wpdb->prefix.CPMP_PLAYER."
+                         WHERE id = %d
+                        ",
+                            $_POST['player_id'] 
+                        )
+                );
+            }    
 			
 			$sql = "SELECT id, player_name FROM ".$wpdb->prefix.CPMP_PLAYER.";";
 			$players = $wpdb->get_results($sql);
@@ -382,7 +383,7 @@ class CodePeopleMediaPlayer {
 				
 			}
 			
-			if(wp_verify_nonce($_POST['cpmp_player_creation_nonce'], __FILE__)){
+			if(isset($_POST['cpmp_player_creation_nonce']) && wp_verify_nonce($_POST['cpmp_player_creation_nonce'], __FILE__)){
 				$config->type = $_POST['player_type'];
 			}
 			
@@ -702,12 +703,12 @@ class CodePeopleMediaPlayer {
 				$flash_src = '';
 				
 				// Set attributes
-				if($config_obj->width) $mp_atts[] = 'width="'.$config_obj->width.'"';
-				if($config_obj->height) $mp_atts[] = 'height="'.$config_obj->height.'"';
+				if(isset($config_obj->width)) $mp_atts[] = 'width="'.$config_obj->width.'"';
+				if(isset($config_obj->height)) $mp_atts[] = 'height="'.$config_obj->height.'"';
 				$mp_atts[] = 'class="codepeople-media'.(($config_obj->skin) ? ' '.$config_obj->skin : '').'"';
-				if($config_obj->loop) $mp_atts[] = 'loop="'.$config_obj->loop.'"';
-				if($config_obj->autoplay) $mp_atts[] = 'autoplay="'.$config_obj->autoplay.'"';
-				if($config_obj->preload) $mp_atts[] = 'preload="'.$config_obj->preload.'"';
+				if(isset($config_obj->loop)) $mp_atts[] = 'loop="'.$config_obj->loop.'"';
+				if(isset($config_obj->autoplay)) $mp_atts[] = 'autoplay="'.$config_obj->autoplay.'"';
+				if(isset($config_obj->preload)) $mp_atts[] = 'preload="'.$config_obj->preload.'"';
 				
 				$first_item = true;
 				// Set sources and playlist
