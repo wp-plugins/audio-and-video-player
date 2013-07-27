@@ -48,7 +48,7 @@ if (!function_exists("cpmp_admin_menu")) {
 		global $cpmp_obj; 
 		
 		// Add to admin_menu
-		add_options_page('Audio And Video Player', 'Audio And Video Player', 9, basename(__FILE__), array(&$cpmp_obj, 'admin_page')); 
+		add_options_page('Audio And Video Player', 'Audio And Video Player', 'edit_posts', basename(__FILE__), array(&$cpmp_obj, 'admin_page')); 
 		
 		// Set media hooks
 		if ($cpmp_obj->check_upload_media_context('cpmp-poster-image') || $cpmp_obj->check_upload_media_context('cpmp-media-files')) {
