@@ -784,6 +784,18 @@ class CodePeopleMediaPlayer {
 					'codepeople_media_player_style_'.$config_obj->skin,
 					plugin_dir_url(__FILE__).'skins/'.$config_obj->skin.'/'.$config_obj->skin.'.css'
 					);
+                    
+                    if(file_exists(plugin_dir_path(__FILE__).'skins/'.$config_obj->skin.'/'.$config_obj->skin.'.js')){
+                        
+                        wp_enqueue_script( 
+                            'codepeople_media_player_script_'.$config_obj->skin,
+                            plugin_dir_url(__FILE__).'skins/'.$config_obj->skin.'/'.$config_obj->skin.'.js',
+                            array('jquery'),
+                            false,
+                            true
+                        );
+                        
+                    }
 				}
 				
 				wp_enqueue_script( 
@@ -793,6 +805,7 @@ class CodePeopleMediaPlayer {
 				false,
 				true
 				);
+                
 				$sub_id = mt_rand(1, 99999);
 				return '<div id="ms_avp"><'.$config_obj->type.' id="'.$id.$sub_id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.$sub_id.'-list">'.implode(' ', $pl_items).'</ul>' : '').'<noscript>audio-and-video-player require JavaScript</noscript></div>';
 				

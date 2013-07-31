@@ -538,12 +538,27 @@ k;g++)if(d[g].isSeparator)e+='<div class="mejs-contextmenu-separator"></div>';el
 		iPadUseNativeControls: false,
 		iPhoneUseNativeControls: false, 
 		success: function(media, node,  player) {
+            var cp = $(node).parents('.codepeople-media');
 			if(media.pluginType && media.pluginType == 'silverlight'){
-				$(node).parents('.codepeople-media').addClass('silverlight');
+				cp.addClass('silverlight');
 			}	
 			
-			new mejs.Playlist(player);
-		}
+            // Get skin
+            var cls = cp.attr('class');
+            cls = cls.replace(/^\s+/, '').replace(/\s+$/, '');
+            cls = cls.split(/\s+/);
+            
+            for(var i = 0, h = cls.length; i < h; i++){
+                if(/\-skin$/.test(cls[i])){
+                    if( typeof cp_skin_js != 'undefined' && cp_skin_js[cls[i]]){
+                        cp_skin_js[cls[i]]($);
+                    }
+                    break;
+                }
+            }
+			
+            new mejs.Playlist(player);
+        }
 	});
 }
 
