@@ -318,6 +318,7 @@
     margin:0px;
 	color: #000;
 	text-shadow: 1px 1px 0 #A2A7AF;
+    list-style-type:none;
 }
 
 #ms_avp .classic-skin.emjs-playlist li:hover,
