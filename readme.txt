@@ -42,6 +42,9 @@ Premium features are available in the pro version to extend the capabilities of 
 * Allows to sell a file for each player, using PayPal as payment gateway.
 * Display a sales report to check easily the amount of sales.
 
+[youtube http://www.youtube.com/watch?v=xkezhDTNAxU]
+The Audio **CP Media Player - Audio Player and Video Player** has available multiples skins that should be **acquired separately**
+
 If you want more information about this plugin CP Media Player - Audio Player and Video Player, or another one don't doubt to visit my website:
 
 [http://www.tsplayer.com/html5-audio-and-video-player](http://www.tsplayer.com/html5-audio-and-video-player "TSPlayer Multimedia Solutions")
@@ -166,6 +169,28 @@ A: The browsers support different formats of audio and video, so it is recommend
 = Q: I've multiple subtitle files for different languages. Is possible to use all of them? =
 
 A: Yes of course, press the "Add another one" button and enter the data related to the new subtitles.
+
+= Q: How it is possible to sell all files of album? =
+
+A: If you want to play some files through the media player, but sell the complete album. You should enter a zipped file (with all files of album) in the box "Select the file" of "For Sale" section.
+
+= Q: What audio formats are supported by each browser? =
+
+A: The audio formats supported by each browser, can be checked in the following link:
+http://www.w3schools.com/html/html5_audio.asp
+
+= Q: What video formats are supported by each browser? =
+
+A: The video formats supported by each browser, can be checked in the following link:
+http://www.w3schools.com/html/html5_video.asp
+
+= Q: Are included all skins with the plugin? =
+
+A: The free version of plugin includes only the Classic Skin. The premium version of plugin includes only one skin, you can select the skin to be included in the player, furthermore it is possible purchase the skins separately to a reduced price.
+
+= Q: How to install a new skin? = 
+
+A: After purchase a new skin, you only should to upload the skin's directory to: "/wp-content/plugins/audio-and-video-player/skins", and then select the corresponding skin, from the settings page of player.
 
 == Screenshots ==
 
