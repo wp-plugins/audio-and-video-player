@@ -89,52 +89,6 @@ class CodePeopleMediaPlayer {
 		return $skins_list;	
 	}
 	
-	function check_upload_media_context($context) {
-		if (isset($_REQUEST['context']) && $_REQUEST['context'] == $context) {
-			return TRUE;
-		} elseif (isset($_POST['attachments']) && is_array($_POST['attachments'])) { 
-			// check for context in attachment objects 
-			$media_data = current($_POST['attachments']);
-			if (isset($media_data['context']) && $media_data['context'] == $context ) {
-				return TRUE;
-			}
-		} 
-		return FALSE;
-	}
-	
-	function _media_action_button($form_fields, $post){
-		$hidden = "<input type='hidden' name='attachments[$post->ID][url]' value='" . esc_attr($post->guid) . "' />";
-		$send   = "<input type='submit' class='button' name='send[$post->ID]' value='" . __( 'Set in item' ) . "' />";
-		$form_fields = array(
-			'buttons' 		=> array('tr' => "\t\t<tr class='submit'><td></td><td class='savesend'>$hidden $send</td></tr>\n"),
-			'context' 		=> array( 'input' => 'hidden', 'value' => $_REQUEST['context'] ),
-			'input_field' 	=> array( 'input' => 'hidden', 'value' => $_REQUEST['container_id'] )
-		);	
-		return $form_fields;
-	}
-	
-	function _media_selected($html, $send_id, $attachment) {
-		$href = $attachment['url'];
-		?>
-		<script type="text/javascript">
-		/* <![CDATA[ */
-	
-		var win = window.dialogArguments || opener || parent || top;
-		win.jQuery( '#<?php echo $attachment['input_field']; ?>' ).val('<?php echo addslashes($href); ?>');
-		win.tb_remove();
-		/* ]]> */
-		</script>
-		<?php
-		exit();
-	}
-	
-	function _let_library_only($_default_tabs){
-		unset($_default_tabs['type']);
-		unset($_default_tabs['type_url']);
-		unset($_default_tabs['gallery']);
-		return($_default_tabs); 
-	}
-	
 	/*
 		Create the settings page
 	*/
@@ -347,10 +301,6 @@ class CodePeopleMediaPlayer {
 			wp_enqueue_style('thickbox');
 			wp_enqueue_script('cpmp-admin', plugin_dir_url(__FILE__).'js/cpmp_admin.js', array('jquery', 'thickbox'), null, true);
 			
-			$image_library_url = get_upload_iframe_src( 'image', null, 'library' );
-			$image_library_url = remove_query_arg( array('TB_iframe'), $image_library_url );
-			$image_library_url = add_query_arg( array( 'tab'=>'library', 'post_mime_type'=>'image', 'container_id' => 'item_poster', 'context' => 'cpmp-poster-image', 'TB_iframe' => 1), $image_library_url );
-			
 			$player = new stdClass;
 			$config = new stdClass;
 			$config->skin = '';
@@ -387,9 +337,6 @@ class CodePeopleMediaPlayer {
 				$config->type = $_POST['player_type'];
 			}
 			
-			$media_library_url = get_upload_iframe_src( 'media', null, 'library' );
-			$media_library_url = remove_query_arg( array('TB_iframe'), $media_library_url );
-			$media_library_url = add_query_arg( array( 'tab'=>'library', 'post_mime_type'=>$config->type, 'container_id' => 'item_file', 'context' => 'cpmp-media-files', 'TB_iframe' => 1 ), $media_library_url );
 			
 			$width_limit  = '';
 			$height_limit = '';
@@ -514,7 +461,7 @@ class CodePeopleMediaPlayer {
 													</th>
 													<td>
 														<input type="text" name="item_poster" id="item_poster" class="item_poster" />
-														<a title="<?php _e('Select the item poster'); ?>" href="<?php echo esc_url( $image_library_url ); ?>" class="thickbox"><?php _e('Select Poster'); ?></a>
+														<input type="button" title="<?php _e('Select the item poster'); ?>" onclick="avp_select_file( this );" value="<?php _e('Select Poster'); ?>" />
 														<br />
 														<span style="font-style:italic; color:#666;">
 														<?php 
@@ -531,7 +478,7 @@ class CodePeopleMediaPlayer {
 													<td>
 														<div>
 															<input type="text" name="item_file[]" class="item_file" id="item_file" value="" >
-															<a title="<?php _e('Select the item file'); ?>" href="<?php echo esc_url( $media_library_url ); ?>" class="thickbox"><?php _e('Select File'); ?></a>
+															<input type="button" onclick="avp_select_file(this);" title="<?php _e('Select the item file'); ?>" value="<?php _e('Select File'); ?>" />
 															<input type="button" value="Add another one" onclick="cpmp.add_field(this, 'item_file')">
 														</div>	
 														<br />

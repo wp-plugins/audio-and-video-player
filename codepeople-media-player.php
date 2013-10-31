@@ -46,16 +46,8 @@ add_action('admin_menu', 'cpmp_admin_menu');
 if (!function_exists("cpmp_admin_menu")) { 
 	function cpmp_admin_menu() { 
 		global $cpmp_obj; 
-		
 		// Add to admin_menu
 		add_options_page('Audio And Video Player', 'Audio And Video Player', 'edit_posts', basename(__FILE__), array(&$cpmp_obj, 'admin_page')); 
-		
-		// Set media hooks
-		if ($cpmp_obj->check_upload_media_context('cpmp-poster-image') || $cpmp_obj->check_upload_media_context('cpmp-media-files')) {
-			add_filter('media_upload_tabs', array(&$cpmp_obj, '_let_library_only'), 99, 1);
-			add_filter('attachment_fields_to_edit', array(&$cpmp_obj, '_media_action_button'), 20, 2);
-			add_filter('media_send_to_editor', array(&$cpmp_obj, '_media_selected'), 0, 3);
-		}
 	}    
 }
 

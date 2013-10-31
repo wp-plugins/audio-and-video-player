@@ -334,8 +334,8 @@ var cpmp = function($){
 				}}
             ],
 			close:function(){
-				c.remove();
 				$(this).dialog('destroy');
+				c.remove();
 			}
         });
 	};
@@ -383,3 +383,20 @@ jQuery(
 	}
 );
 
+function avp_send_to_editor( html ){
+	var file_url = jQuery(html).attr('href');
+	if (file_url) {
+		jQuery(avp_file_path_field).val(file_url);
+	}
+	tb_remove();
+	window.send_to_editor = avp_send_to_editor_default;
+}
+
+function avp_select_file( e ){
+	avp_send_to_editor_default = window.send_to_editor;
+	
+	avp_file_path_field = jQuery( e ).parent().find( 'input[type="text"]' )
+	window.send_to_editor = window.avp_send_to_editor;
+	tb_show('', 'media-upload.php?post_id=0&amp;TB_iframe=true');
+	return false;
+};
