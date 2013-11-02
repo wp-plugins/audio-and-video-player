@@ -635,6 +635,9 @@ class CodePeopleMediaPlayer {
 						 );
 		
 		extract($atts);
+		
+		$styles = '';
+		
 		if(isset($id)){
 			$sql = 'SELECT * FROM '.$wpdb->prefix.CPMP_PLAYER.' WHERE id='.$id;
 			$player = $wpdb->get_row($sql);
@@ -650,8 +653,26 @@ class CodePeopleMediaPlayer {
 				$flash_src = '';
 				
 				// Set attributes
-				if(isset($config_obj->width)) $mp_atts[] = 'width="'.$config_obj->width.'"';
-				if(isset($config_obj->height)) $mp_atts[] = 'height="'.$config_obj->height.'"';
+				if($config_obj->width){ 
+					$mp_atts[] = 'width="'.$config_obj->width.'"';
+					$styles   .= 'width:'.$config_obj->width.( 
+						(
+							strpos( $config_obj->width, '%' ) === false ||
+							strpos( $config_obj->width, 'px' ) === false ||
+							strpos( $config_obj->width, 'em' ) === false
+						) ? 'px' : '' ).';';
+						
+				}
+				if($config_obj->height){
+					$mp_atts[] = 'height="'.$config_obj->height.'"';
+					$styles   .= 'height:'.$config_obj->height.( 
+						(
+							strpos( $config_obj->height, '%' ) === false ||
+							strpos( $config_obj->height, 'px' ) === false ||
+							strpos( $config_obj->height, 'em' ) === false
+						) ? 'px' : '' ).';';
+				}	
+				
 				$mp_atts[] = 'class="codepeople-media'.(($config_obj->skin) ? ' '.$config_obj->skin : '').'"';
 				if(isset($config_obj->loop)) $mp_atts[] = 'loop="'.$config_obj->loop.'"';
 				if(isset($config_obj->autoplay)) $mp_atts[] = 'autoplay="'.$config_obj->autoplay.'"';
@@ -754,7 +775,7 @@ class CodePeopleMediaPlayer {
 				);
                 
 				$sub_id = mt_rand(1, 99999);
-				return '<div id="ms_avp"><'.$config_obj->type.' id="'.$id.$sub_id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.$sub_id.'-list">'.implode(' ', $pl_items).'</ul>' : '').'<noscript>audio-and-video-player require JavaScript</noscript></div>';
+				return '<div id="ms_avp" style="'.$styles.'"><'.$config_obj->type.' id="'.$id.$sub_id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.$sub_id.'-list">'.implode(' ', $pl_items).'</ul>' : '').'<noscript>audio-and-video-player require JavaScript</noscript></div>';
 				
 			}else{
 				return '';
