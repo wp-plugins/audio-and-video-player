@@ -3,7 +3,7 @@ Contributors: codepeople
 Donate link: http://www.tsplayer.com/audio-and-video-player
 Tags: html5,video,audio,player,flash,silverlight,mp4,mp3,ogg,webm,wmv,captions,subtitles,websrt,iphone,ipad,android,paypal,media,skin,commerce,ecommerce
 Requires at least: 3.0.5
-Tested up to: 3.7.1
+Tested up to: 3.8
 Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -41,6 +41,13 @@ Premium features are available in the pro version to extend the capabilities of 
 * Allows to publish multiple CP Media Player - Audio Player and Video Player.
 * Allows to sell a file for each player, using PayPal as payment gateway.
 * Display a sales report to check easily the amount of sales.
+
+**Demo of Premium Version of Plugin**
+
+[http://www.dreamweaverdownloads.com/demos/audio-and-video/wp-login.php](http://www.dreamweaverdownloads.com/demos/audio-and-video/wp-login.php "Click to access the Administration Area demo")
+
+[http://www.dreamweaverdownloads.com/demos/audio-and-video/](http://www.dreamweaverdownloads.com/demos/audio-and-video/ "Click to access the Public Page")
+
 
 [youtube http://www.youtube.com/watch?v=xkezhDTNAxU]
 The Audio **CP Media Player - Audio Player and Video Player** has available multiples skins that should be **acquired separately**

@@ -532,33 +532,48 @@ k;g++)if(d[g].isSeparator)e+='<div class="mejs-contextmenu-separator"></div>';el
 		});
 	};
 	
-	$('.codepeople-media').mediaelementplayer({
-		features: ['previous','playpause','next','fullscreen','tracks','eq','current','progress','duration','volume'],
-		videoVolume: 'horizontal',
-		iPadUseNativeControls: false,
-		iPhoneUseNativeControls: false, 
-		success: function(media, node,  player) {
-            var cp = $(node).parents('.codepeople-media');
-			if(media.pluginType && media.pluginType == 'silverlight'){
-				cp.addClass('silverlight');
-			}	
+	$('.codepeople-media').each(function(){
+		var me 		 = $(this),
+			settings = {
+				features: ['previous','playpause','next','fullscreen','tracks','eq','current','progress','duration','volume'],
+				videoVolume: 'horizontal',
+				iPadUseNativeControls: false,
+				iPhoneUseNativeControls: false, 
+				success: function(media, node,  player) {
+					var cp = $(node).parents('.codepeople-media');
+					if(media.pluginType && media.pluginType == 'silverlight'){
+						cp.addClass('silverlight');
+					}	
+					
+					// Get skin
+					var cls = cp.attr('class');
+					cls = cls.replace(/^\s+/, '').replace(/\s+$/, '');
+					cls = cls.split(/\s+/);
+					
+					for(var i = 0, h = cls.length; i < h; i++){
+						if(/\-skin$/.test(cls[i])){
+							if( typeof cp_skin_js != 'undefined' && cp_skin_js[cls[i]]){
+								cp_skin_js[cls[i]]($);
+							}
+							break;
+						}
+					}
+					
+					media.addEventListener( 'play', function(){ 
+						var p = $( node ).parents( '#ms_avp' );
+						if( p.length && p.find( '.current' ).length == 0 ){
+							p.find( '.emjs-playlist li:first' ).addClass( 'current' );
+						}
+						
+					} );
+					
+					new mejs.Playlist(player);
+				}
+			};
 			
-            // Get skin
-            var cls = cp.attr('class');
-            cls = cls.replace(/^\s+/, '').replace(/\s+$/, '');
-            cls = cls.split(/\s+/);
-            
-            for(var i = 0, h = cls.length; i < h; i++){
-                if(/\-skin$/.test(cls[i])){
-                    if( typeof cp_skin_js != 'undefined' && cp_skin_js[cls[i]]){
-                        cp_skin_js[cls[i]]($);
-                    }
-                    break;
-                }
-            }
-			
-            new mejs.Playlist(player);
-        }
-	});
+		settings[ 'defaultVideoHeight' ] = settings[ 'audioHeight' ] = settings[ 'videoHeight' ] = me.height();
+		settings[ 'defaultVideoWidth' ] = settings[ 'audioWidth' ] = settings[ 'videoWidth' ] = me.width();
+		me.mediaelementplayer( settings );
+	});	
 }
 

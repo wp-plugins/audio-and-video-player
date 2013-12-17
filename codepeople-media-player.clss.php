@@ -96,7 +96,11 @@ class CodePeopleMediaPlayer {
 		global $wpdb;
 ?>
 		<h2><?php _e('Audio And Video Player'); ?></h2>
-		<p  style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;"><?php _e('For any issues with the media player, go to our <a href="http://www.tsplayer.com/contact-us" target="_blank">contact page</a> and leave us a message.'); ?></p>
+		<p  style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;"><?php _e('For any issues with the media player, go to our <a href="http://www.tsplayer.com/contact-us" target="_blank">contact page</a> and leave us a message.'); ?>
+		<br />
+		If you want test the premium version of CP Media Player go to the following links:<br/> <a href="http://www.dreamweaverdownloads.com/demos/audio-and-video/wp-login.php" target="_blank">Administration area: Click to access the administration area demo</a><br/> 
+		<a href="http://www.dreamweaverdownloads.com/demos/audio-and-video/" target="_blank">Public page: Click to access the Public Page</a>
+		</p>
 		
 <?php	
 		if(isset($_POST['cpmp_player_create_update_nonce']) && wp_verify_nonce($_POST['cpmp_player_create_update_nonce'], __FILE__)){
@@ -651,7 +655,15 @@ class CodePeopleMediaPlayer {
 				$flash_src = '';
 				
 				// Set attributes
-				if($config_obj->width) $mp_atts[] = 'width="'.$config_obj->width.'"';
+				$styles = 'style="';
+				if($config_obj->width) 
+				{
+					$width = trim( $config_obj->width );
+					if( is_numeric( $width ) ) $width .= 'px';
+					$styles .= 'width:'.$width.';'; 
+					$mp_atts[] = 'width="'.$config_obj->width.'"';
+				}
+				$styles .= '"';
 				if($config_obj->height) $mp_atts[] = 'height="'.$config_obj->height.'"';
 				
 				$mp_atts[] = 'class="codepeople-media'.(($config_obj->skin) ? ' '.$config_obj->skin : '').'"';
@@ -756,7 +768,7 @@ class CodePeopleMediaPlayer {
 				);
                 
 				$sub_id = mt_rand(1, 99999);
-				return '<div id="ms_avp"><'.$config_obj->type.' id="'.$id.$sub_id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.$sub_id.'-list">'.implode(' ', $pl_items).'</ul>' : '').'<noscript>audio-and-video-player require JavaScript</noscript></div>';
+				return '<div id="ms_avp" '.$styles.'><'.$config_obj->type.' id="'.$id.$sub_id.'" '.implode(' ', $mp_atts).'>'.implode('',$srcs).implode('', $mp_subtitles).'</'.$config_obj->type.'>'.((count($pl_items) > 0 && $config_obj->playlist) ? '<ul id="'.$id.$sub_id.'-list">'.implode(' ', $pl_items).'</ul>' : '').'<noscript>audio-and-video-player require JavaScript</noscript></div>';
 				
 			}else{
 				return '';
