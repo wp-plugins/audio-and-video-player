@@ -382,6 +382,7 @@ k;g++)if(d[g].isSeparator)e+='<div class="mejs-contextmenu-separator"></div>';el
 			
 			// Set the success callback
 			options['success'] = function(media, domNode, player) {
+				$( window ).resize();
 				me.player = player;
 				me.player.playlist = me;
 				me.player.media.addEventListener('ended', function (e) {
@@ -570,9 +571,9 @@ k;g++)if(d[g].isSeparator)e+='<div class="mejs-contextmenu-separator"></div>';el
 					new mejs.Playlist(player);
 				}
 			};
-			
+		
 		settings[ 'defaultVideoHeight' ] = settings[ 'audioHeight' ] = settings[ 'videoHeight' ] = me.height();
-		settings[ 'defaultVideoWidth' ] = settings[ 'audioWidth' ] = settings[ 'videoWidth' ] = me.width();
+		settings[ 'defaultVideoWidth' ] = settings[ 'audioWidth' ] = settings[ 'videoWidth' ] = me.parent( '#ms_avp' ).width();
 		me.mediaelementplayer( settings );
 	});	
 }
