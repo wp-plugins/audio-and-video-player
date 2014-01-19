@@ -98,8 +98,8 @@ class CodePeopleMediaPlayer {
 		<h2><?php _e('Audio And Video Player'); ?></h2>
 		<p  style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;"><?php _e('For any issues with the media player, go to our <a href="http://www.tsplayer.com/contact-us" target="_blank">contact page</a> and leave us a message.'); ?>
 		<br />
-		If you want test the premium version of CP Media Player go to the following links:<br/> <a href="http://www.dreamweaverdownloads.com/demos/audio-and-video/wp-login.php" target="_blank">Administration area: Click to access the administration area demo</a><br/> 
-		<a href="http://www.dreamweaverdownloads.com/demos/audio-and-video/" target="_blank">Public page: Click to access the Public Page</a>
+		If you want test the premium version of CP Media Player go to the following links:<br/> <a href="http://demos.net-factor.com/audio-and-video/wp-login.php" target="_blank">Administration area: Click to access the administration area demo</a><br/> 
+		<a href="http://demos.net-factor.com/audio-and-video/" target="_blank">Public page: Click to access the Public Page</a>
 		</p>
 		
 <?php	

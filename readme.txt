@@ -44,9 +44,9 @@ Premium features are available in the pro version to extend the capabilities of 
 
 **Demo of Premium Version of Plugin**
 
-[http://www.dreamweaverdownloads.com/demos/audio-and-video/wp-login.php](http://www.dreamweaverdownloads.com/demos/audio-and-video/wp-login.php "Click to access the Administration Area demo")
+[http://demos.net-factor.com/audio-and-video/wp-login.php](http://demos.net-factor.com/audio-and-video/wp-login.php "Click to access the Administration Area demo")
 
-[http://www.dreamweaverdownloads.com/demos/audio-and-video/](http://www.dreamweaverdownloads.com/demos/audio-and-video/ "Click to access the Public Page")
+[http://demos.net-factor.com/audio-and-video/](http://demos.net-factor.com/audio-and-video/ "Click to access the Public Page")
 
 
 [youtube http://www.youtube.com/watch?v=xkezhDTNAxU]
