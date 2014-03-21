@@ -320,7 +320,7 @@ k;g++)if(d[g].isSeparator)e+='<div class="mejs-contextmenu-separator"></div>';el
 				dim 	 = '',
 				options  = me.player.options,
 				isVideo  = me.player.isVideo,
-				tag      = ( (isVideo) ? '<video' : '<audio' ) + ' autoplay="autoplay" ';
+				tag      = ( (isVideo) ? '<video' : '<audio' );
 
 			// Set ID
 			tag += ' id="' + me.playerId + '"';
