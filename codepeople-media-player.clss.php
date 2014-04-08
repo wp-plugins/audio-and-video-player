@@ -689,6 +689,7 @@ class CodePeopleMediaPlayer {
                             switch ($ext){
                                 case 'mp4':
                                 case 'm4v':
+                                case 'm4a':
                                     $ext = 'mp4';
                                 break;	
                                 case 'webm':
