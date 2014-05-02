@@ -94,6 +94,7 @@ class CodePeopleMediaPlayer {
 	*/
 	function admin_page(){
 		global $wpdb;
+		wp_enqueue_media();
 ?>
 		<h2><?php _e('Audio And Video Player'); ?></h2>
 		<p  style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;"><?php _e('For any issues with the media player, go to our <a href="http://www.tsplayer.com/contact-us" target="_blank">contact page</a> and leave us a message.'); ?>
