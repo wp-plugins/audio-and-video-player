@@ -65,26 +65,24 @@ var cpmp = function($){
 	}
 	
 	function load_additional_skins(data){
-		var s = $('#skin_container');
+		var s 		= $('#skin_container'),
+			title 	= ' - The Skin is included in the premium version of plugin';
 		if(s.length){
-			var s = $('#skin_container');
-			if(s.length){
 				$.getJSON('http://www.tsplayer.com/cpmp_skins.php?callback=?', function(data){
-					if(data){
-						var skin_list = [];
-						
-						if(typeof cpmp_skin_list != 'undefined' && cpmp_skin_list){
-							skin_list = cpmp_skin_list;
-						}
-			
-		
-						for(var i=0, h=data.length; i < h; i++){
-							if(inArray(skin_list, data[i].id) == -1)
-							s.append('<a href="'+data[i].link+'" target="_blank" style="margin-left:5px;"><img src="'+data[i].thumbnail+'" title="'+data[i].name+'" border="0" /></a>');
-						}
+				if(data){
+					var skin_list = [];
+					
+					if(typeof cpmp_skin_list != 'undefined' && cpmp_skin_list){
+						skin_list = cpmp_skin_list;
 					}
-				});
-			}
+		
+	
+					for(var i=0, h=data.length; i < h; i++){
+						if(inArray(skin_list, data[i].id) == -1)
+						s.append('<a href="'+data[i].link+'" target="_blank" style="margin-left:5px;"><img src="'+data[i].thumbnail+'" title="'+data[i].name+( ( !/custom\-skin\-commercial/i.test( data[i].thumbnail ) ) ? title : '' )+'" border="0" /></a>');
+					}
+				}
+			});
 		}
 	}
 	

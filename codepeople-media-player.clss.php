@@ -66,7 +66,7 @@ class CodePeopleMediaPlayer {
 							$skins_list .= '
 									<img 
 										src="'.((isset($skin_data['thumbnail'])) ? CPMP_PLUGIN_URL.'/skins/'.$entry.'/'.$skin_data['thumbnail'] : CPMP_PLUGIN_URL.'/images/thumbnail.jpg').'" 
-										title="'.((isset($skin_data['name'])) ?  $skin_data['name'] : $skin_data['id']).'"
+										title="'.((isset($skin_data['name'])) ?  $skin_data['name'] : $skin_data['id']).' - Available"
 										onclick="cpmp.set_skin(this, \''.$skin_data['id'].'\', \''.((isset($skin_data[$type]["width"])) ? $skin_data[$type]["width"] : '').'\', \''.((isset($skin_data[$type]["height"])) ? $skin_data[$type]["height"] : '').'\');"';
 							$skins_list_script .= 'cpmp_skin_list['.$c.']="'.$skin_data['id'].'";';
 							$c++;
@@ -360,7 +360,8 @@ class CodePeopleMediaPlayer {
 						?>
 					</div>
 					<h3><?php _e('Select the media player skin'); ?></h3>
-					
+					<p style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;">
+                All SKINS are included in the commercial version of <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio and Video Player</a>.</p>
 					<div id="skin_container" style="overflow-x:auto;height:127px;width:100%;">
 					<?php	
 						print $skin_list;
