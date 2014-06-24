@@ -39,6 +39,7 @@ The base plugin, available for free from the WordPress Plugin Directory has all 
 Premium features are available in the pro version to extend the capabilities of this plugin:
 
 * Allows to publish multiple CP Media Player - Audio Player and Video Player.
+* Includes all available skins.
 * Allows to sell a file for each player, using PayPal as payment gateway.
 * Display a sales report to check easily the amount of sales.
 
@@ -50,7 +51,7 @@ Premium features are available in the pro version to extend the capabilities of 
 
 
 [youtube http://www.youtube.com/watch?v=xkezhDTNAxU]
-The Audio **CP Media Player - Audio Player and Video Player** has available multiples skins that should be **acquired separately**
+The Audio **CP Media Player - Audio Player and Video Player** has available multiples skins
 
 If you want more information about this plugin CP Media Player - Audio Player and Video Player, or another one don't doubt to visit my website:
 
@@ -63,11 +64,6 @@ If you want more information about this plugin CP Media Player - Audio Player an
 2. Upload the Entire html5-audio-and-video-player / directory to the / wp-content/plugins / directory
 3. Activate the plugin through the Plugins menu in WordPress
 
-**To install new skins in your media player:**
-
-1. Download and unzip the skin.
-2. Upload the desired skin directory to /wp-content/plugins/html5-audio-and-video-player/skins/
-3. Associate the skin with your CP Media Player - Audio Player and Video Player through the plugin management page.
 
 == Interface ==
 The video includes the features of free and premium versions of plugin, please, check the features list to detect each of them.
@@ -193,11 +189,11 @@ http://www.w3schools.com/html/html5_video.asp
 
 = Q: Are included all skins with the plugin? =
 
-A: The free version of plugin includes only the Classic Skin. The premium version of plugin includes only one skin, you can select the skin to be included in the player, furthermore it is possible purchase the skins separately to a reduced price.
+A: The free version of plugin includes only the Classic Skin. The premium version of plugin includes all skins. If you have purchased the premium version of plugin some time ago, and does not includes all the skins, use your download link to get a version of plugin with all available skins.
 
-= Q: How to install a new skin? = 
+= Q: How to install the skins? = 
 
-A: After purchase a new skin, you only should to upload the skin's directory to: "/wp-content/plugins/audio-and-video-player/skins", and then select the corresponding skin, from the settings page of player.
+A: You only should to upload the skin's directory to: "/wp-content/plugins/audio-and-video-player/skins", and then select the corresponding skin, from the settings page of player.
 
 == Screenshots ==
 
