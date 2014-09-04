@@ -3,7 +3,7 @@ Contributors: codepeople
 Donate link: http://www.tsplayer.com/audio-and-video-player
 Tags: html5,video,audio,player,flash,silverlight,mp4,m4a,m4v,mp3,ogg,webm,wmv,captions,subtitles,websrt,iphone,ipad,android,paypal,media,skin,commerce,ecommerce
 Requires at least: 3.0.5
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
