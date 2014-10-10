@@ -1,7 +1,7 @@
 === CP Media Player - Audio Player and Video Player ===
 Contributors: codepeople
 Donate link: http://www.tsplayer.com/audio-and-video-player
-Tags: html5,video,audio,player,flash,silverlight,mp4,m4a,m4v,mp3,ogg,webm,wmv,captions,subtitles,websrt,iphone,ipad,android,paypal,media,skin,commerce,ecommerce,image,images,admin,Post,posts,page,shortcode,plugin,Google
+Tags: html5,video,audio,player,flash,silverlight,mp4,m4a,m4v,mp3,ogg,webm,wmv,captions,subtitles,websrt,iphone,ipad,android,paypal,media,skin,commerce,ecommerce,image,images,admin,Post,posts,page,shortcode,plugin,Google,youtube
 Requires at least: 3.0.5
 Tested up to: 4.0
 Stable tag: 1.0.1
