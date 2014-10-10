@@ -1,7 +1,7 @@
 === CP Media Player - Audio Player and Video Player ===
 Contributors: codepeople
 Donate link: http://www.tsplayer.com/audio-and-video-player
-Tags: html5,video,audio,player,flash,silverlight,mp4,m4a,m4v,mp3,ogg,webm,wmv,captions,subtitles,websrt,iphone,ipad,android,paypal,media,skin,commerce,ecommerce
+Tags: html5,video,audio,player,flash,silverlight,mp4,m4a,m4v,mp3,ogg,webm,wmv,captions,subtitles,websrt,iphone,ipad,android,paypal,media,skin,commerce,ecommerce,image,images,admin,Post,posts,page,shortcode,plugin,Google
 Requires at least: 3.0.5
 Tested up to: 4.0
 Stable tag: 1.0.1
@@ -200,3 +200,27 @@ A: You only should to upload the skin's directory to: "/wp-content/plugins/audio
 1. CP Media Player - Audio Player and Video Player
 2. Creation page
 3. CP Media Player - Audio Player and Video Player insertion
+
+== Changelog ==
+
+= 1.0 =
+
+* First version released.
+
+= 1.0.1 =
+
+* Improves the plugin documentation.
+* Allows to associate subtitle files to the player.
+* Allows to associate playlists to the player.
+* Corrects the full screen button when the Silverlight version of the player is used.
+* Allows change the order of the playlist items, from the player's edition.
+* Corrects an issue with multiple players in the same page or post.
+* Corrects an issue playing videos from YouTube.
+* Allows to start playing automatically the next item of playlist.
+* Corrects an issue with the loop attribute if the playlist was disabled.
+* Corrects an issue with the covers associated to the playlist's items.
+* Corrects an issue with the time indicator for long videos.
+* Fixes an issue playing videos in fullscreen in Firefox browser.
+* Separates the skins from the kernel of player.
+* Corrects the controls depending of size of the media player.
+* Corrects an issue with the m4a files extension.
