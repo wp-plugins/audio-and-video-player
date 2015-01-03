@@ -336,3 +336,5 @@
 	font-size:16;
 }
 /* END: CLASSIC-SKIN */
+
+#ms_avp .mejs-offscreen{display:none;}
