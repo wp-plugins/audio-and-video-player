@@ -16,7 +16,7 @@ class CodePeopleMediaPlayer {
 			if ($networkwide) {
 	            $old_blog = $wpdb->blogid;
 				// Get all blog ids
-				$blogids = $wpdb->get_col($wpdb->prepare("SELECT blog_id FROM $wpdb->blogs"));
+				$blogids = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" );
 				foreach ($blogids as $blog_id) {
 					switch_to_blog($blog_id);
 					$this->_create_db_structure();
@@ -27,6 +27,21 @@ class CodePeopleMediaPlayer {
 		}
 		$this->_create_db_structure();
 		
+	}
+	
+	/* 
+		A new blog has been created in a multisite WordPress 
+	*/
+	function installing_new_blog($blog_id, $user_id, $domain, $path, $site_id, $meta ) {
+		global $wpdb;
+		
+		if ( is_plugin_active_for_network() ) 
+		{
+			$current_blog = $wpdb->blogid;
+			switch_to_blog( $blog_id );
+			$this->_create_db_structure();
+			switch_to_blog( $current_blog );
+		}
 	}
 	
 	/*
