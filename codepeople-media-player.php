@@ -24,7 +24,8 @@ require 'codepeople-media-player.clss.php';
 $cpmp_obj = new CodePeopleMediaPlayer();
 
 register_activation_hook(__FILE__, array(&$cpmp_obj, 'register_plugin'));
-
+// A new blog has been created in a multisite WordPress
+add_action( 'wpmu_new_blog', array(&$cpmp_obj, 'installing_new_blog'), 10, 6);
 
 $plugin = plugin_basename(__FILE__);
 //add_filter('plugin_action_links_'.$plugin, array(&$cpmp_obj, 'customization_link'));
