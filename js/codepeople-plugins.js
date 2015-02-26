@@ -253,6 +253,8 @@ k;g++)if(d[g].isSeparator)e+='<div class="mejs-contextmenu-separator"></div>';el
 			for(var i = 0, h = mejs.players.length; i < h; i++){
 				if(mejs.players[i].$media[0].id == me.playerId){
 					mejs.players[i].pause();
+					mejs.players[i].setSrc( '' );
+					mejs.players[i].load();
 					mejs.players.splice(i,1);
 					break;
 				}
