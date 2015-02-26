@@ -650,6 +650,9 @@ class CodePeopleMediaPlayer {
 	function replace_shortcode($atts){
 		global $wpdb;
 		
+		wp_deregister_script( 'wp-mediaelement' );
+		wp_deregister_style( 'wp-mediaelement' );
+		
 		$supported_ext = array(
 							'audio' => array('mp3', 'oga', 'ogg'),
 							'video' => array('wmv', 'flv', 'ogg', 'ogv', 'webm', 'm4v', 'mp4'),
