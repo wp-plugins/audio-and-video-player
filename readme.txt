@@ -4,7 +4,7 @@ Donate link: http://www.tsplayer.com/audio-and-video-player
 Tags: html5,video,audio,player,flash,silverlight,mp4,m4a,m4v,mp3,ogg,webm,wmv,captions,subtitles,websrt,iphone,ipad,android,paypal,media,skin,commerce,ecommerce,image,images,admin,Post,posts,page,shortcode,plugin,Google,youtube
 Requires at least: 3.0.5
 Tested up to: 4.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -224,3 +224,15 @@ A: You only should to upload the skin's directory to: "/wp-content/plugins/audio
 * Separates the skins from the kernel of player.
 * Corrects the controls depending of size of the media player.
 * Corrects an issue with the m4a files extension.
+
+= 1.0.2 =
+
+* Displays the shortcodes in the players settings, to allow copy the shortcode, and paste it in the content editor of pages.
+
+== Upgrade Notice ==
+
+= 1.0.2 =
+
+* Displays the shortcodes in the players settings, to allow copy the shortcode, and paste it in the content editor of pages.
+
+Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://www.tsplayer.com/support

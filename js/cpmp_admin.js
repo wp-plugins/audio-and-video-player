@@ -378,6 +378,9 @@ jQuery(
 		}
 		
 		cpmp.load_additional_skins();
+		
+		$( 'select#player_id' ).on( 'change', function( evt ){ var e = $(evt.target); $( '#avp_display_shortcode' ).html( '[codepeople-html5-media-player id="'+e.val()+'"]' ); } );
+		$( 'select#player_id' ).trigger( 'change' );
 	}
 );
 

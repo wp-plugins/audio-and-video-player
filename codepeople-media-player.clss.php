@@ -197,6 +197,7 @@ class CodePeopleMediaPlayer {
 							</select>
 							<input type="submit" value="Edit media player" class="button-primary">
 							<input type="button" value="Remove media player" class="button-primary" onclick="cpmp.remove_player();">
+							<span id="avp_display_shortcode"></span>
 						</div>
 						<div>
 							<?php _e('Only one media player can be inserted in the free version of Audio and Video Player. To increase the media player features, get the professional version on <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio and Video Player</a>'); ?>
@@ -374,6 +375,7 @@ class CodePeopleMediaPlayer {
 						<?php _e('For more information go to the <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio And Video Player</a> plugin page'); 
 						?>
 					</div>
+					<div><strong>Player shortcode:</strong> [codepeople-html5-media-player id="<?php echo( ( !empty( $player_id ) ) ? $player_id : 'in progress' ); ?>"]</div>
 					<h3><?php _e('Select the media player skin'); ?></h3>
 					<p style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;">
                 All SKINS are included in the commercial version of <a href="http://www.tsplayer.com/audio-and-video-player" target="_blank">Audio and Video Player</a>.</p>
