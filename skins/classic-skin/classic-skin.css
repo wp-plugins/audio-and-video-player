@@ -1,0 +1,340 @@
+/* CLASSIC-SKIN */
+#ms_avp{}
+#ms_avp object,#ms_avp embed,#ms_avp video{margin:0; background:#000;}
+#ms_avp .mejs-mediaelement{background:none;}
+#ms_avp .mejs-container{overflow:hidden;}
+#ms_avp .mejs-poster img{margin:0;}
+#ms_avp .mejs-container.classic-skin {
+	outline: 1px solid rgb(23,41,78);
+	min-height:65px;
+}
+
+#ms_avp .classic-skin .mejs-controls {
+	height: 65px;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background: #D5D8E0;
+	background: rgb(213,216,224);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(241,242,245)), to(rgb(90,98,111)));
+	background: -webkit-linear-gradient(top, rgb(241,242,245), rgb(90,98,111));
+	background: -o-linear-gradient(top, rgb(241,242,245), rgb(90,98,111));
+	background: -ms-linear-gradient(top, rgb(241,242,245), rgb(90,98,111));
+	background: linear-gradient(rgb(241,242,245), rgb(90,98,111));
+	background: linear-gradient(rgb(241,242,245), rgb(90,98,111));
+	background: -moz-linear-gradient(top, rgb(241,242,245), rgb(90,98,111)); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#F1F2F5, endColorstr=#5A626F,GradientType=0 );
+}
+#ms_avp .classic-skin .mejs-button,
+#ms_avp .classic-skin .mejs-time {
+	position: absolute;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-time-rail .mejs-time-total {
+	background: #616976;
+	background: rgb(97,105,118);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(97,105,118)), to(rgb(255,255,255)));
+	background: -webkit-linear-gradient(top, rgb(97,105,118), rgb(255,255,255));
+	background: -moz-linear-gradient(top, rgb(97,105,118), rgb(255,255,255)); 
+	background: -o-linear-gradient(top, rgb(97,105,118), rgb(255,255,255));
+	background: -ms-linear-gradient(top, rgb(97,105,118), rgb(255,255,255));
+	background: linear-gradient(rgb(97,105,118), rgb(255,255,255));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#616976, endColorstr=#FFFFFF,GradientType=0 );
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-bottom: 1px solid rgba(202,206,216, 0.8);
+	height: 6px;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-time-rail .mejs-time-buffering{height:6px;}
+#ms_avp .classic-skin .mejs-controls .mejs-time-rail .mejs-time-loaded {
+	background: #718DC1;
+	background: rgb(113,141,193);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(86,129,212)), rgb(170,196,245)));
+	background: -webkit-linear-gradient(top, rgb(86,129,212), rgb(170,196,245));
+	background: -moz-linear-gradient(top, rgb(86,129,212), rgb(170,196,245)); 
+	background: -o-linear-gradient(top, rgb(86,129,212), rgb(170,196,245));
+	background: -ms-linear-gradient(top, rgb(86,129,212), rgb(170,196,245));
+	background: linear-gradient(rgb(86,129,212), rgb(170,196,245));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#5681D4, endColorstr=#AAC4F5,GradientType=0 );
+	
+	width: 0;
+	height: 6px;
+	border-radius: 5px;
+	border-bottom: 1px solid rgba(202,206,216, 0.2);
+	
+}
+#ms_avp .classic-skin .mejs-controls .mejs-time-rail .mejs-time-current {
+	width: 0;
+	height: 6px;
+	background: rgb(0,153,255);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(0,153,255)), to(rgb(28,54,111)));
+	background: -webkit-linear-gradient(top, rgb(0,153,255), rgb(28,54,111));
+	background: -moz-linear-gradient(top, rgb(0,153,255), rgb(28,54,111)); 
+	background: -o-linear-gradient(top, rgb(0,153,255), rgb(28,54,111));
+	background: -ms-linear-gradient(top, rgb(0,153,255), rgb(28,54,111));
+	background: linear-gradient(rgb(0,153,255), rgb(28,54,111));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#0099FF, endColorstr=#1C366F,GradientType=0 );
+	border-radius: 5px;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-time-rail .mejs-time-handle  {
+	display: block;
+	margin: 0;
+	width: 32px;
+	height: 10px;
+	top: -2px;
+	border: 0;
+	background: url(controls-classic.png) no-repeat 0 0;	
+}
+#ms_avp .classic-skin .mejs-controls .mejs-time-rail .mejs-time-float {	
+	display: none;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-previous-button  {
+	top: 23px;
+	left: 9px;
+	width: 36px;
+	height: 35px;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-previous-button button  {
+	width: 36px;
+	height: 35px;
+	background: url(controls-classic.png) no-repeat 0 -304px;
+	margin: 0;
+	padding: 0;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-playpause-button  {
+	top: 23px;
+	left: 48px;
+	width: 38px;
+	height: 38px;
+}
+
+#ms_avp .classic-skin .mejs-controls .mejs-playpause-button  button{
+	width: 38px;
+	height: 38px;
+	background: url(controls-classic.png) no-repeat 0 -12px;
+	margin: 0;
+	padding: 0;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-pause button  {
+	background-position: 0 -51px;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-next-button  {
+	top: 23px;
+	left: 89px;
+	width: 36px;
+	height: 35px;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-next-button button  {
+	width: 36px;
+	height: 35px;
+	background: url(controls-classic.png) no-repeat 0 -268px;
+	margin: 0;
+	padding: 0;
+}
+
+#ms_avp .classic-skin .mejs-controls .mejs-captions-button {
+	top: 23px;
+	left: 181px;
+	width: 38px;
+	height: 38px;
+}
+#ms_avp .classic-skin.silverlight .mejs-controls .mejs-captions-button {left:137px;}
+#ms_avp .classic-skin .mejs-controls .mejs-captions-button  button {
+	width: 38px;
+	height: 38px;
+	background: transparent url(controls-classic.png) no-repeat 0 -228px;
+	margin: 0;
+	padding: 0;
+}
+
+#ms_avp .mejs-controls .mejs-captions-button .mejs-captions-selector {
+	z-index:9999;
+	left:0px;
+	bottom:14px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-fullscreen-button  {
+	top: 23px;
+	left: 140px;
+	width: 38px;
+	height: 38px;
+}
+#ms_avp .classic-skin.silverlight .mejs-controls .mejs-fullscreen-button  {left:auto;right:7px;}
+#ms_avp .classic-skin .mejs-controls .mejs-fullscreen-button  button {
+	width: 38px;
+	height: 38px;
+	background: transparent url(controls-classic.png) no-repeat 0 -90px;
+	margin: 0;
+	padding: 0;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-unfullscreen  button {
+	background: transparent url(controls-classic.png) no-repeat 0 -129px;
+	margin: 0;
+	padding: 0;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-volume-button  {
+	top: 28px;
+	right: 158px;
+	width: 28px;
+	height: 28px;
+}
+#ms_avp .classic-skin.silverlight .mejs-controls .mejs-volume-button  {right:204px;}
+#ms_avp .classic-skin .mejs-controls .mejs-mute button {
+	background: url(controls-classic.png) no-repeat 0 -169px;
+	width: 29px;
+	height: 29px;
+	margin: 0;
+	padding: 0;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-unmute button {
+	background: url(controls-classic.png) no-repeat 0 -199px;
+	width: 29px;
+	height: 29px;
+	margin: 0;
+	padding: 0;	
+}
+
+#ms_avp .classic-skin .mejs-controls .mejs-time span {
+	font-size: 16px;
+	font-weight:bold;
+	color: #333;
+	text-shadow: 1px 1px 1px #A6ADBA;
+}
+#ms_avp .classic-skin .mejs-controls .mejs-currenttime-container  {
+	position: absolute;
+	top: 30px;
+	right: 242px;
+	border-right:1px dotted #5B6370;
+}
+#ms_avp .classic-skin.silverlight .mejs-controls .mejs-currenttime-container  {right:285px;}
+#ms_avp .classic-skin .mejs-controls .mejs-duration-container  {
+	position: absolute;
+	top: 30px;
+	right: 192px;
+}
+#ms_avp .classic-skin.silverlight .mejs-controls .mejs-duration-container  {right:235px;}
+
+/* horizontal version */
+
+#ms_avp .classic-skin .mejs-controls div.mejs-horizontal-volume-slider {
+	bottom:15px;
+	right:51px;
+	height: 19px;
+	width: 97px;
+	position: absolute;
+	background:url(volume-slider-classic.png) no-repeat;
+}
+#ms_avp .classic-skin.silverlight .mejs-controls div.mejs-horizontal-volume-slider {right:97px;}
+#ms_avp .classic-skin .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
+	width: 79px;
+	height: 13px;
+	position:absolute;
+	top:4px;
+	left:9px;
+	background:none;
+}
+
+#ms_avp .classic-skin .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
+	position: absolute;
+	left: 9px;
+	top: 4px;
+	width: 79px;
+	height: 13px;
+	margin: 0 ;
+	padding: 0;
+	font-size: 1px;
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	background: rgb(0,153,255);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(0,153,255)), to(rgb(28,54,111)));
+	background: -webkit-linear-gradient(top, rgb(0,153,255), rgb(28,54,111));
+	background: -moz-linear-gradient(top, rgb(0,153,255), rgb(28,54,111)); 
+	background: -o-linear-gradient(top, rgb(0,153,255), rgb(28,54,111));
+	background: -ms-linear-gradient(top, rgb(0,153,255), rgb(28,54,111));
+	background: linear-gradient(rgb(0,153,255), rgb(28,54,111));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#0099FF, endColorstr=#1C366F,GradientType=0 );
+}
+
+
+#ms_avp .classic-skin .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle {
+	display: none;
+}
+
+#ms_avp .classic-skin  .mejs-controls .eq{
+	position:absolute;
+	right: 9px;
+	bottom:13px;
+	width: 33px;
+	height : 19px;
+}
+#ms_avp .classic-skin.silverlight .mejs-controls .eq{right:55px;}
+#ms_avp .classic-skin   .mejs-controls .eq .bar {
+    width:5px;
+    height:19px;
+    display: inline-block;
+    position:absolute;
+	bottom:0;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background: #D5D8E0;
+	background: rgb(213,216,224);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(241,242,245)), to(rgb(90,98,111)));
+	background: -webkit-linear-gradient(top, rgb(241,242,245), rgb(90,98,111));
+	background: -o-linear-gradient(top, rgb(241,242,245), rgb(90,98,111));
+	background: -ms-linear-gradient(top, rgb(241,242,245), rgb(90,98,111));
+	background: linear-gradient(rgb(241,242,245), rgb(90,98,111));
+	background: linear-gradient(rgb(241,242,245), rgb(90,98,111));
+	background: -moz-linear-gradient(top, rgb(241,242,245), rgb(90,98,111)); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#F1F2F5, endColorstr=#5A626F,GradientType=0 );
+}
+
+#ms_avp .classic-skin.emjs-playlist{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	list-style-type: none;
+	padding:10px 0;
+	border: 1px solid rgb(23,41,78);
+	border-radius: 5px;
+	background: #D5D8E0;
+	background: rgb(213,216,224);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(241,242,245)), to(rgb(90,98,111)));
+	background: -webkit-linear-gradient(top, rgb(241,242,245), rgb(90,98,111));
+	background: -o-linear-gradient(top, rgb(241,242,245), rgb(90,98,111));
+	background: -ms-linear-gradient(top, rgb(241,242,245), rgb(90,98,111));
+	background: linear-gradient(rgb(241,242,245), rgb(90,98,111));
+	background: linear-gradient(rgb(241,242,245), rgb(90,98,111));
+	background: -moz-linear-gradient(top, rgb(241,242,245), rgb(90,98,111)); 
+	margin:10px 0 0 0;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#F1F2F5, endColorstr=#5A626F,GradientType=0 );
+}
+
+#ms_avp .classic-skin.emjs-playlist li{
+	cursor: pointer;
+	padding:5px 10px;
+    margin:0px;
+	color: #000;
+	text-shadow: 1px 1px 0 #A2A7AF;
+    list-style-type:none;
+}
+
+#ms_avp .classic-skin.emjs-playlist li:hover,
+#ms_avp .classic-skin .cpmp-info:hover,
+#ms_avp .classic-skin.emjs-playlist .current{
+	color:#FFF;
+	background: #545B67;
+	font-weight: bold;
+	text-shadow:none;
+}
+
+#ms_avp .classic-skin .cpmp-info{
+	color:#000;
+	text-decoration:none;
+	font-size:16;
+}
+/* END: CLASSIC-SKIN */
+
+#ms_avp .mejs-offscreen{display:none;}
